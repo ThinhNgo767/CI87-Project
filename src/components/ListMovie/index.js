@@ -1,38 +1,30 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import MOVIES from "../../data/Movies";
-import settings from "./SettingSlick";
+import { Routes, Route, Link } from "react-router-dom";
+
+import MovieShowing from "../MovieShowing";
+import UpComingMoive from "../UpcomingMovie";
 import "./style.css";
-
-import { GiTicket } from "react-icons/gi";
-import { Button } from "antd";
-
 const ListMovie = () => {
   return (
-    <div>
-      <Slider {...settings}>
-        {/* {MOVIES.filter((movie) => movie.status === false)} */}
-        {MOVIES.map((movie) => (
-          <div className="card">
-            <div className="card-top">
-              <img src={movie.thumnail} alt={movie.title} />
-              <p>{movie.title}</p>
-            </div>
-            <div className="card-bottom">
-              <Button
-                type="primary"
-                size="medium"
-                style={{ backgroundColor: "#45AB3C", width: "100%" }}
-              >
-                <GiTicket />
-                Mua vé
-              </Button>
-            </div>
-          </div>
-        ))}
-      </Slider>
+    <div className="list-movie">
+      <nav>
+        <ul className="nav--titles">
+          <li>
+            <Link to="/">Phim Đang Chiếu</Link>
+          </li>
+          <li>
+            <Link to="/phimsapchieu">Phim Sắp Chiếu</Link>
+          </li>
+          <li>
+            <Link to="/vebantruoc">Vé Bán Trước</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<MovieShowing />}></Route>
+        <Route path="/phimsapchieu" element={<UpComingMoive />}></Route>
+        <Route path="/vebantruoc" element={<UpComingMoive />}></Route>
+      </Routes>
     </div>
   );
 };
