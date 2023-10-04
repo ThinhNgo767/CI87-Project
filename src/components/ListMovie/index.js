@@ -5,6 +5,7 @@ import MovieShowing from "../MovieShowing";
 import UpComingMoive from "../UpcomingMovie";
 import "./style.css";
 const ListMovie = () => {
+  
   return (
     <div className="list-movie">
       <nav>

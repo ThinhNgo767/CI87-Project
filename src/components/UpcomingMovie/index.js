@@ -14,7 +14,7 @@ const UpComingMoive = () => {
   return (
     <Slider {...settings}>
       {upComing.map((movie) => (
-        <div className="card">
+        <div className="card" key={movie.id}>
           <div className="card-top">
             <img src={movie.thumnail} alt={movie.title} />
             <p className="title-movie">{movie.title}</p>

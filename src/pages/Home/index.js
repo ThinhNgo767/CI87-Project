@@ -2,12 +2,14 @@ import React from "react";
 
 import ListMovie from "../../components/ListMovie";
 import CardsMember from "../../components/CardsMember";
+import Banner from "./component/Banner";
 
 import "./style.css";
 
 const Home = () => {
   return (
     <div className="home-page">
+      <Banner/>
       <div className="section--product-view">
         <ListMovie />
       </div>

@@ -1,0 +1,46 @@
+.footer{
+    background: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-grid.jpg) top center repeat;
+    color: white;
+}
+.footer .container{
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+    border-bottom: 2px solid #343434;
+}
+.footer ul {
+    list-style: none;
+    margin-top: 0.75rem;
+}
+.footer ul >li {
+    text-transform: capitalize;
+    color: #c3cc26;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+.footer .title{
+    text-transform: uppercase;
+    position: relative;
+}
+.footer .title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 3rem;
+    height: 0.2rem;
+    background: #c3cc26;
+}
+.footer .footer_row-left ,.footer .footer_row-right{
+width: 25%;
+}
+.footer-logo ,.footer_copyright{
+    text-align: center;
+}
+.footer-logo {
+    padding: 0.75rem 0rem;
+}
+.footer_copyright{
+    padding: 1rem 0rem;
+    font-size: 0.8rem;
+}

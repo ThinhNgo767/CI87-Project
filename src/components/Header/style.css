@@ -1,0 +1,122 @@
+.header {
+  width: 100%;
+  height: 5rem;
+  z-index: 999;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+  position: sticky;
+    top: 0;
+    background: #000000;
+}
+button {
+    cursor: pointer;
+}
+button.header_button--toggle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 5rem;
+  height: 3rem;
+  font-size: 0.8rem;
+  background-color: transparent;
+}
+.nav-menu {
+  color: #fff;
+  position: absolute;
+  background-color: black;
+  padding: 1rem 4rem 1rem 1rem;
+  list-style: none;
+  width: fit-content;
+  transition: transform 0.5s ease-out;
+}
+
+
+.nav-menu > li {
+  margin: 0.75rem 0rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.toggle_button-size {
+  font-size: 3rem;
+}
+.header_button_order-ticket,
+.header_button_login,
+.header_button--toggle {
+  font-family: "Roboto", sans-serif;
+  width: 7rem;
+  height: 2.3rem;
+  color: #fff;
+  background-color: #54ab35;
+  border-radius: 3px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.header_button_order-ticket:hover,
+.header_button_login:hover{
+    color: #54ab35;
+  background-color: #fff; 
+}
+.header_button--toggle:hover{
+    color: #54ab35;
+}
+.header,
+.header_item--right,
+.header_item--left,
+.header_social_login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.header_logo {
+  z-index: 3;
+}
+.header .header_logo img.logo {
+  width: 5rem;
+}
+.header_item--left {
+  margin-left: 2.5rem;
+  padding-bottom: 0.75rem;
+}
+.header_item--right {
+  margin-right: 2.5rem;
+  padding-bottom: 0.75rem;
+}
+.header_item {
+  justify-content: space-between;
+}
+
+.image--line {
+  position: absolute;
+  top: 100%;
+  left: 46%;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header_button_social {
+    border: 1px solid #fff;
+    padding: 0.3rem 0.4rem;
+    border-radius: 5px;
+    background-color: #000;
+    
+}
+.social {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.open {
+    transform: translateY(0); 
+  }
+  
+  .close {
+    transform: translateY(-100%);
+  }
+  .nav-menu{
+    transition: transform 0.3s;
+  }
