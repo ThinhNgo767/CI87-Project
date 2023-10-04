@@ -11,6 +11,7 @@ import { useState, useRef, useEffect } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
@@ -31,8 +32,27 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    let prevScrollpos = window.scrollY;
+    const handleScroll = () => {
+      let currentScrollPos = window.scrollY;
+      if (prevScrollpos > currentScrollPos) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+      prevScrollpos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="header">
+    <div className={isScrolled ? "header scrolled-up" :"header scrolled-down"}>
       <div className="header_item--left header_toggle-menu">
         {isOpen ? (
           <div className="toggle_menu">

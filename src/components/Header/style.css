@@ -120,3 +120,9 @@ button.header_button--toggle {
   .nav-menu{
     transition: transform 0.3s;
   }
+  .scrolled-up {
+    top: 0;
+  }
+  .scrolled-down {
+    top: -7rem;
+  }
