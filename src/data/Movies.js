@@ -143,12 +143,11 @@ const MOVIES = [
     videoDuration: "91 phút",
     status: true,
   },
-
   // SẮP CHIẾU
   {
     title: "CHIẾM ĐOẠT",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002790?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002733?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Thắng Vũ",
     category: "Drama",
     videoDuration: "97 phút",
@@ -157,7 +156,7 @@ const MOVIES = [
   {
     title: "ĐẤT RỪNG PHƯƠNG NAM",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002812?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002699?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Nguyễn Quang Dũng",
     category: "Documentary",
     videoDuration: "110 phút",
@@ -166,7 +165,7 @@ const MOVIES = [
   {
     title: "DUNE : PART II",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002793?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002700?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Denis Villeneuve",
     category: "Action",
     videoDuration: "120 phút",
@@ -175,16 +174,25 @@ const MOVIES = [
   {
     title: "FIVE NIGHT AT FREDDY'S",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002786?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002798?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Emma Tammi",
     category: "Horror",
     videoDuration: "110 phút",
     status: false,
   },
   {
+    title: "GIAO LỘ 8675",
+    thumnail:
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002775?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+    director: "TanDs Le",
+    category: "Adventure",
+    videoDuration: "110 phút",
+    status: false,
+  },
+  {
     title: "KILLERS OF THE FLOWER MOON",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002774?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002804?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Martin Scorsese",
     category: "Crime",
     videoDuration: "206 phút",
@@ -193,7 +201,7 @@ const MOVIES = [
   {
     title: "KRAVEN THE HUNTER",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002777?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002762?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "J.C Chandor",
     category: "",
     videoDuration: "120 phút",
@@ -202,7 +210,7 @@ const MOVIES = [
   {
     title: "MIGRATION",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002744?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002759?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Benjamin Renner",
     category: "Animation",
     videoDuration: "110 phút",
@@ -211,7 +219,7 @@ const MOVIES = [
   {
     title: "NGƯỜI MẶT TRỜI",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002761?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002799?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Timothy Linh Bùi",
     category: "Action",
     videoDuration: "101 phút",
@@ -220,7 +228,7 @@ const MOVIES = [
   {
     title: "NGƯỜI VỢ CUỐI CÙNG",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002780?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002792?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Victor Vũ",
     category: "Romance",
     videoDuration: "98 phút",
@@ -229,7 +237,7 @@ const MOVIES = [
   {
     title: "THE EXORCIST : BELIEVER",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002782?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002797?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "David Gordon Green",
     category: "Horor",
     videoDuration: "121 phút",
@@ -238,7 +246,7 @@ const MOVIES = [
   {
     title: "THE MARVELS",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002783?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002701?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Nia DaCosta",
     category: "Adventure",
     videoDuration: "95 phút",
@@ -247,7 +255,7 @@ const MOVIES = [
   {
     title: "TROLLS BAND TOGETHER",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002784?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002751?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Tim Heitz",
     category: "Animation",
     videoDuration: "110 phút",
@@ -256,7 +264,7 @@ const MOVIES = [
   {
     title: "TABOO - ĐIỀU CẤM KỴ KINH HOÀNG",
     thumnail:
-      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002778?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002796?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
     director: "Vũ Thành",
     category: "Horror",
     videoDuration: "90 phút",

@@ -1,30 +1,28 @@
-.card {
-  overflow: hidden;
+.list-movie > nav > ul {
+  margin: 0;
+  list-style: none;
+  padding: 22px 0;
 }
 
-/* the slides */
-.slick-slider {
-  margin: 0 40px;
+.nav--titles {
+  display: flex;
+  justify-content: center;
 }
 
-.slick-slide > div {
-  margin: 0 12px;
+.nav--titles > li {
+  text-transform: uppercase;
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
-/* the parent */
-.slick-list {
-  margin: 0 -12px;
+.nav--titles > li > a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 20px 12px 15px;
 }
 
-.card-top img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.slick-arrow {
-  z-index: 10;
-}
-
-.btn-showing {
+.nav--titles > li > a:hover {
+  color: #d4dd29;
+  border-bottom: #d4dd29;
 }
