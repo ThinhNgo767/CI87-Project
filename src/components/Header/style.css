@@ -8,6 +8,13 @@
   top: 0;
   background: #000000;
 }
+.header a{
+  color: #616E72;
+  font-weight: 600;
+}
+.header a:hover{
+  color: #D5DD29;
+}
 .header--flex {
   width: 100%;
   display: flex;
@@ -166,8 +173,13 @@ button.header_button--toggle {
 }
 .form-button-sigup {
   margin-top: 1rem;
+  font-size: 0.9rem;
   width: 100%;
 }
+.form-button-sigup:hover{
+  background-color: #8AC441;
+}
+
 .form-login-item {
   display: flex;
   align-items: center;

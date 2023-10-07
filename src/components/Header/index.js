@@ -4,10 +4,11 @@ import LoginHeader from "../LoginHeader";
 
 import { FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let prevScrollpos = window.scrollY;
@@ -35,10 +36,11 @@ const Header = () => {
       <div className="header--flex">
         <div className="header_item--left">
           <button
+          onClick={()=> {navigate("/lich-chieu-phim")}}
             type="button"
             className="header_button_order-ticket header_button--style"
-          >
-            MUA VÉ
+          >MUA VÉ
+            
           </button>
         </div>
         <div className="header_logo">
