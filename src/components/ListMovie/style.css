@@ -1,3 +1,8 @@
+.list-movie{
+  height: 100%;
+  padding: 1rem 0;
+  padding-top: 2rem;
+}
 .list-movie > nav > ul {
   margin: 0;
   list-style: none;
@@ -20,9 +25,15 @@
   text-decoration: none;
   color: #ffffff;
   margin: 20px 12px 15px;
+  font-weight: 600;
 }
 
 .nav--titles > li > a:hover {
+ 
+  color: #d4dd29;
+  border-bottom: 1px solid #d4dd29;
+}
+.nav--titles > li > a.active-link{
   color: #d4dd29;
   border-bottom: 1px solid #d4dd29;
 }
