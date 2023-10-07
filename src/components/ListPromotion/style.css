@@ -1,0 +1,29 @@
+.list-movie > nav > ul {
+  margin: 0;
+  list-style: none;
+  padding: 22px 0;
+}
+
+.nav--titles-promotion {
+  display: flex;
+  justify-content: center;
+}
+
+.nav--titles-promotion > li {
+  text-transform: uppercase;
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.nav--titles-promotion > li > a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #bcdc95;
+}
+
+.nav--titles-promotion > li > span {
+  text-decoration: none;
+  font-weight: 800;
+  color: #bcdc95;
+}
