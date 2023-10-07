@@ -1,10 +1,11 @@
 
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 
 const LoginHeader = () => {
   const [openLogin, setOpenLogin] = useState(false);
   const loginRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -22,6 +23,11 @@ const LoginHeader = () => {
 
   const openFromLogin = () => {
     setOpenLogin(!openLogin);
+  };
+
+  const handleSignUpClick = () => {
+    navigate("/dang-ky");
+    setOpenLogin(false)
   };
 
   return (
@@ -43,7 +49,7 @@ const LoginHeader = () => {
                 <button type="button" className="form-button-login header_button--style">ĐĂNG NHẬP</button>
                 <Link to="/reset-password">Quên mật khẩu</Link>
               </div>
-              <button type="button" className="form-button-sigup header_button--style">ĐĂNG KÝ THÀNH VIÊN</button>
+              <button type="button" onClick={handleSignUpClick} className="form-button-sigup header_button--style">ĐĂNG KÝ THÀNH VIÊN</button>
             </form>
          
         </>
