@@ -9,7 +9,7 @@ import MOVIES from "../../data/Movies";
 import settings from "./SettingSlick";
 import "./style.css";
 
-const MovieShowing = () => {
+const PreSaleTickets = () => {
   const preSale = MOVIES.filter(
     (movieShowing) => movieShowing.preSale === true
   );
@@ -38,4 +38,4 @@ const MovieShowing = () => {
   );
 };
 
-export default MovieShowing;
+export default PreSaleTickets;
