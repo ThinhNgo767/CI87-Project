@@ -10,7 +10,7 @@ font-size: 3rem;
 .banner .slick-next{
     right: 3.5rem;
 }
-.banner .slick-slider , .banner .slick-list , .banner .slick-slide > div{
+.banner .slick-slider , .banner .slick-list , .banner .slick-slide > div , .banner .slick-track{
     margin: 0;
 }
  

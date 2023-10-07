@@ -18,16 +18,14 @@ const App = () => {
     <div className="App">
       <Header />
       <Routes>
-      
-        <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home />} />
         <Route path="/lich-chieu-phim" element={<ShowTimes />} />
         <Route path="/he-thong-rap" element={<Cinema />} />
         <Route path="/khuyen-mai-su-kien" element={<PromotionsEvents />} />
         <Route path="/quang-cao" element={<Advertisement/>} />
         <Route path="/ve-chung-toi" element={<Abouts />} />
         <Route path="/dang-ky" element={<LoginRegister />} />
-        <Route path="*" element={<Error />} />
-        
+        <Route path="*" element={<Error />} />   
       </Routes>
       <Footer />
     </div>
