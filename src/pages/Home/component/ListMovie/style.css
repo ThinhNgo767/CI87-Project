@@ -1,0 +1,30 @@
+.card {
+  overflow: hidden;
+}
+
+/* the slides */
+.slick-slider {
+  margin: 0 40px;
+}
+
+.slick-slide > div {
+  margin: 0 12px;
+}
+
+/* the parent */
+.slick-list {
+  margin: 0 -12px;
+}
+
+.card-top img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slick-arrow {
+  z-index: 10;
+}
+
+.btn-showing {
+}

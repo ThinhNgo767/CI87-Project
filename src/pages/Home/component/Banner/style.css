@@ -1,0 +1,16 @@
+.banner{
+    background-color: #030406;
+}
+.banner .slick-prev:before, .banner .slick-next:before{
+font-size: 3rem;
+}
+.banner .slick-prev{
+    left: 2rem;
+}
+.banner .slick-next{
+    right: 3.5rem;
+}
+.banner .slick-slider , .banner .slick-list , .banner .slick-slide > div{
+    margin: 0;
+}
+ 

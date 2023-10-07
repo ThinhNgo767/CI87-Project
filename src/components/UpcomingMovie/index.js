@@ -1,12 +1,12 @@
 import React from "react";
+import Slider from "react-slick";
 import { GiTicket } from "react-icons/gi";
 import { Button } from "antd";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import settings from "./SettingSlick";
 import MOVIES from "../../data/Movies";
+import settings from "./SettingSlick";
 import "./style.css";
 
 const UpComingMoive = () => {
@@ -14,7 +14,7 @@ const UpComingMoive = () => {
   return (
     <Slider {...settings}>
       {upComing.map((movie) => (
-        <div className="card">
+        <div className="card" key={movie.id}>
           <div className="card-top">
             <img src={movie.thumnail} alt={movie.title} />
             <p className="title-movie">{movie.title}</p>

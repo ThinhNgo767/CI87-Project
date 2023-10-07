@@ -10,9 +10,6 @@
 .section--product-view {
   background: url(../../assets/images/movie-details-bg.jpg) fixed repeat;
 }
-
-.section--promotion {
-  background: url(../../assets/images/bg-home-02.jpg) repeat-x;
-  background-size: 100% 100%;
-  padding: 50px 0 60px 0;
+.home-page{
+  background: url(../../assets/images/movie-details-bg.jpg) fixed repeat;
 }

@@ -3,9 +3,9 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import MovieShowing from "../MovieShowing";
 import UpComingMoive from "../UpcomingMovie";
-import PreSaleTicket from "../../components/PreSaleTickets";
 import "./style.css";
 const ListMovie = () => {
+  
   return (
     <div className="list-movie">
       <nav>
@@ -24,7 +24,7 @@ const ListMovie = () => {
       <Routes>
         <Route path="/" element={<MovieShowing />}></Route>
         <Route path="/phimsapchieu" element={<UpComingMoive />}></Route>
-        <Route path="/vebantruoc" element={<PreSaleTicket />}></Route>
+        <Route path="/vebantruoc" element={<UpComingMoive />}></Route>
       </Routes>
     </div>
   );

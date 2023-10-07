@@ -19,11 +19,10 @@
 .nav--titles > li > a {
   text-decoration: none;
   color: #ffffff;
-
   margin: 20px 12px 15px;
 }
 
 .nav--titles > li > a:hover {
   color: #d4dd29;
-  border-bottom: 1px solid #d4dd29;
+  border-bottom: #d4dd29;
 }
