@@ -10,7 +10,7 @@ import settings from "./SettingSlick";
 import "./style.css";
 
 const UpComingMoive = () => {
-  const upComing = MOVIES.filter((upComing) => upComing.status === false);
+  const upComing = MOVIES.filter((upComing) => upComing.status === "comingsoon");
   return (
     <Slider {...settings}>
       {upComing.map((movie) => (

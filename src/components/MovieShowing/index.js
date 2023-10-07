@@ -10,7 +10,7 @@ import settings from "./SettingSlick";
 import "./style.css";
 
 const MovieShowing = () => {
-  const showing = MOVIES.filter((movieShowing) => movieShowing.status === true);
+  const showing = MOVIES.filter((movieShowing) => movieShowing.status === "active");
   return (
     <Slider {...settings}>
       {showing.map((movie) => (

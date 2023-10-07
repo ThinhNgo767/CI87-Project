@@ -63,7 +63,7 @@ const LoginRegister = () => {
         <div className="acceps-regulation">
         <label htmlFor="acceps"><input type="checkbox" id="acceps"/>Tôi đã đọc, hiểu và đồng ý với các điều khoản</label>
         </div>
-        
+        <button type="button">Đăng Ký</button>
       </form>
       
       </div>
