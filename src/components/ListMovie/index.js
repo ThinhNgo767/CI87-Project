@@ -1,36 +1,32 @@
 import React from "react";
-import {  Link } from "react-router-dom";
-import { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
 import MovieShowing from "../MovieShowing";
 import UpComingMoive from "../UpcomingMovie";
-import PreSaleTickets from "../PreSaleTickets";
-
-
+import PreSaleTickets from "../../components/PreSaleTickets";
 import "./style.css";
+
 const ListMovie = () => {
-  const [active , setActive] = useState("active")
-  
-  
-  
   return (
     <div className="list-movie">
       <nav>
         <ul className="nav--titles">
           <li>
-            <Link to="/" onClick={()=> setActive("active")} className={active === "active" ? "active-link":""}>Phim Đang Chiếu</Link>
+            <Link to="/">Phim Đang Chiếu</Link>
           </li>
           <li>
-            <Link to="/" onClick={()=> setActive("comingsoon")} className={active === "comingsoon" ? "active-link":""}>Phim Sắp Chiếu</Link>
+            <Link to="/phimsapchieu">Phim Sắp Chiếu</Link>
           </li>
           <li>
             <Link to="/vebantruoc">Vé Bán Trước</Link>
           </li>
         </ul>
       </nav>
-      {active === "active" && <MovieShowing/>}
-      {active === "comingsoon" && <UpComingMoive/>}
-      
+      <Routes>
+        <Route path="/" element={<MovieShowing />}></Route>
+        <Route path="/phimsapchieu" element={<UpComingMoive />}></Route>
+        <Route path="/vebantruoc" element={<PreSaleTickets />}></Route>
+      </Routes>
     </div>
   );
 };
