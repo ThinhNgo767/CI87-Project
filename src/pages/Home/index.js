@@ -10,14 +10,14 @@ import "./style.css";
 const Home = () => {
   return (
     <div className="home-page">
-      <Banner/>
+      <Banner />
       <div className="section--product-view">
         <ListMovie />
       </div>
       <div className="section--member">
         <CardsMember />
       </div>
-<ListPromotion/>
+      <ListPromotion />
     </div>
   );
 };

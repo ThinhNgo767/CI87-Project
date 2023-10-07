@@ -7,7 +7,7 @@ const MOVIES = [
     director: "Animation",
     category: "Cal Brunker",
     videoDuration: "93 phút",
-    status: true,
+    status: "active",
   },
   {
     id :2,
@@ -17,7 +17,7 @@ const MOVIES = [
     director: "Celine Song",
     category: "Romance",
     videoDuration: "106 phút",
-    status: true,
+    status: "active",
   },
   {
     id:3,
@@ -27,7 +27,7 @@ const MOVIES = [
     director: "Nat Chartchai Ketnust",
     category: "Mystery",
     videoDuration: "125 phút",
-    status: true,
+    status: "active",
   },
   {
     id:4,
@@ -37,7 +37,7 @@ const MOVIES = [
     director: "Gareth Edwards",
     category: "Sci-fi",
     videoDuration: "133 phút",
-    status: true,
+    status: "active",
   },
   {
     id:5,
@@ -47,7 +47,7 @@ const MOVIES = [
     director: "Christopher Nolan",
     category: "Action",
     videoDuration: "140 phút",
-    status: true,
+    status: "active",
   },
   {
     id:6,
@@ -57,7 +57,7 @@ const MOVIES = [
     director: "Ca sĩ IU",
     category: "Musical",
     videoDuration: "171 phút",
-    status: true,
+    status: "active",
   },
   {
     id:7,
@@ -67,7 +67,7 @@ const MOVIES = [
     director: "Bhandit Thongdee",
     category: "Drama",
     videoDuration: "106 phút",
-    status: true,
+    status: "active",
   },
   {
     id:8,
@@ -77,7 +77,7 @@ const MOVIES = [
     director: "Scott Waugh",
     category: "Action",
     videoDuration: "103 phút",
-    status: true,
+    status: "active",
   },
   {
     id:9,
@@ -87,7 +87,7 @@ const MOVIES = [
     director: "Park Hee Kon",
     category: "Drama",
     videoDuration: "101 phút",
-    status: true,
+    status: "active",
   },
   {
     id:10,
@@ -97,7 +97,7 @@ const MOVIES = [
     director: "Lee Han",
     category: "Comedy",
     videoDuration: "119 phút",
-    status: true,
+    status: "active",
   },
   {
     id:11,
@@ -107,7 +107,7 @@ const MOVIES = [
     director: "Micheal Chaves",
     category: "Horror",
     videoDuration: "110 phút",
-    status: true,
+    status: "active",
   },
   {
     id:12,
@@ -117,7 +117,7 @@ const MOVIES = [
     director: "YUASA Masaaki",
     category: "History",
     videoDuration: "98 phút",
-    status: true,
+    status: "active",
   },
   {
     id:13,
@@ -127,7 +127,7 @@ const MOVIES = [
     director: "HAMASAKI Shinji",
     category: "Comedy",
     videoDuration: "93 phút",
-    status: true,
+    status: "active",
   },
   {
     id:14,
@@ -137,7 +137,7 @@ const MOVIES = [
     director: "MURAKAMI Shosuke",
     category: "Drama",
     videoDuration: "97 phút",
-    status: true,
+    status: "active",
   },
   {
     id:15,
@@ -147,7 +147,7 @@ const MOVIES = [
     director: "OHKU Akiko",
     category: "Drama",
     videoDuration: "120 phút",
-    status: true,
+    status: "active",
   },
   {
     id:16,
@@ -157,7 +157,7 @@ const MOVIES = [
     director: "Khương Ngọc",
     category: "Horror",
     videoDuration: "91 phút",
-    status: true,
+    status: "active",
   },
 
   // SẮP CHIẾU
@@ -169,7 +169,7 @@ const MOVIES = [
     director: "Thắng Vũ",
     category: "Drama",
     videoDuration: "97 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:18,
@@ -179,7 +179,7 @@ const MOVIES = [
     director: "Nguyễn Quang Dũng",
     category: "Documentary",
     videoDuration: "110 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:19,
@@ -189,7 +189,7 @@ const MOVIES = [
     director: "Denis Villeneuve",
     category: "Action",
     videoDuration: "120 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:20,
@@ -199,7 +199,7 @@ const MOVIES = [
     director: "Emma Tammi",
     category: "Horror",
     videoDuration: "110 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:21,
@@ -209,7 +209,7 @@ const MOVIES = [
     director: "Martin Scorsese",
     category: "Crime",
     videoDuration: "206 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:22,
@@ -219,7 +219,7 @@ const MOVIES = [
     director: "J.C Chandor",
     category: "",
     videoDuration: "120 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:23,
@@ -229,7 +229,7 @@ const MOVIES = [
     director: "Benjamin Renner",
     category: "Animation",
     videoDuration: "110 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:24,
@@ -239,7 +239,7 @@ const MOVIES = [
     director: "Timothy Linh Bùi",
     category: "Action",
     videoDuration: "101 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:25,
@@ -249,7 +249,7 @@ const MOVIES = [
     director: "Victor Vũ",
     category: "Romance",
     videoDuration: "98 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:26,
@@ -259,7 +259,7 @@ const MOVIES = [
     director: "David Gordon Green",
     category: "Horor",
     videoDuration: "121 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:27,
@@ -269,7 +269,7 @@ const MOVIES = [
     director: "Nia DaCosta",
     category: "Adventure",
     videoDuration: "95 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:28,
@@ -279,7 +279,7 @@ const MOVIES = [
     director: "Tim Heitz",
     category: "Animation",
     videoDuration: "110 phút",
-    status: false,
+    status: "comingsoon",
   },
   {
     id:29,
@@ -289,7 +289,7 @@ const MOVIES = [
     director: "Vũ Thành",
     category: "Horror",
     videoDuration: "90 phút",
-    status: false,
+    status: "comingsoon",
   },
 ];
 

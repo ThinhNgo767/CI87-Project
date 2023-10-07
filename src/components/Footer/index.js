@@ -2,7 +2,7 @@ import "./style.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="footer-logo">
         <img
           src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/logo.png"
@@ -37,7 +37,7 @@ const Footer = () => {
       <div className="footer_copyright">
         <p>© 2015 BHD Star Cineplex</p>
       </div>
-    </div>
+    </footer>
   );
 };
 
