@@ -1,8 +1,12 @@
-.list-movie > nav > ul {
-  margin: 0;
+.list-promotion {
+  background-color: #000;
+  padding: 2rem 0rem;
+}
+.list-promotion ul {
   list-style: none;
   padding: 22px 0;
 }
+
 
 .nav--titles-promotion {
   display: flex;
