@@ -37,12 +37,26 @@ const MenuToggle = () => {
             CLOSE
           </button>
 
-          <ul className="nav-menu-toggle " ref={menuRef} onClick={() => setOpenMenu(!openMenu)}>
-            <li ><Link to="/lich-chieu-phim">lịch chiếu</Link></li>
-            <li><Link to="/he-thong-rap">hệ thống rạp</Link></li>
-            <li><Link to="/khuyen-mai-su-kien">khuyến mãi | sự kiện</Link></li>
-            <li><Link to="/quang-cao">dịch vụ quảng cáo</Link></li>
-            <li><Link to="/ve-chung-toi">về chúng tôi</Link></li>
+          <ul
+            className="nav-menu-toggle "
+            ref={menuRef}
+            onClick={() => setOpenMenu(!openMenu)}
+          >
+            <li>
+              <Link to="/lich-theo-chieu-phim">lịch chiếu</Link>
+            </li>
+            <li>
+              <Link to="/he-thong-rap">hệ thống rạp</Link>
+            </li>
+            <li>
+              <Link to="/khuyen-mai-su-kien">khuyến mãi | sự kiện</Link>
+            </li>
+            <li>
+              <Link to="/quang-cao">dịch vụ quảng cáo</Link>
+            </li>
+            <li>
+              <Link to="/ve-chung-toi">về chúng tôi</Link>
+            </li>
           </ul>
         </div>
       ) : (

@@ -24,7 +24,11 @@ const MovieShowing = () => {
               className="btn-antd"
               type="primary"
               size="lagre"
-              style={{ backgroundColor: "#45AB3C", width: "100%" }}
+              style={{
+                backgroundColor: "#45AB3C",
+                width: "100%",
+                height: "40px",
+              }}
             >
               <GiTicket />
               Mua vé
