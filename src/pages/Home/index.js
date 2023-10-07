@@ -17,7 +17,9 @@ const Home = () => {
       <div className="section--member">
         <CardsMember />
       </div>
-      <ListPromotion />
+      <div className="section--promotion">
+        <ListPromotion />
+      </div>
     </div>
   );
 };
