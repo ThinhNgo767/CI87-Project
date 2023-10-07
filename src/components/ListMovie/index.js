@@ -23,7 +23,7 @@ const ListMovie = () => {
           <li>
             <Link to="/" onClick={()=> setActive("comingsoon")} className={active === "comingsoon" ? "active-link":""}>Phim Sắp Chiếu</Link>
           </li>
-          <li>
+          <li> 
             <Link to="/vebantruoc">Vé Bán Trước</Link>
           </li>
         </ul>
