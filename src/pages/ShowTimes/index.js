@@ -8,7 +8,7 @@ import settings from "./SettingSlick";
 import ListPromotion from "../../components/ListPromotion";
 
 const ShowTimes = () => {
-  const showing = MOVIES.filter((movieShowing) => movieShowing.status === true);
+  const showing = MOVIES.filter((movieShowing) => movieShowing.status === "active");
   return (
     <>
       <div className="warper-content">
