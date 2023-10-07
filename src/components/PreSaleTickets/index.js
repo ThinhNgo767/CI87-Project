@@ -1,19 +1,21 @@
 import React from "react";
+import Slider from "react-slick";
 import { GiTicket } from "react-icons/gi";
 import { Button } from "antd";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import settings from "./SettingSlick";
 import MOVIES from "../../data/Movies";
+import settings from "./SettingSlick";
 import "./style.css";
 
-const UpComingMoive = () => {
-  const upComing = MOVIES.filter((upComing) => upComing.status === false);
+const MovieShowing = () => {
+  const preSale = MOVIES.filter(
+    (movieShowing) => movieShowing.preSale === true
+  );
   return (
     <Slider {...settings}>
-      {upComing.map((movie) => (
+      {preSale.map((movie) => (
         <div className="card">
           <div className="card-top">
             <img src={movie.thumnail} alt={movie.title} />
@@ -36,4 +38,4 @@ const UpComingMoive = () => {
   );
 };
 
-export default UpComingMoive;
+export default MovieShowing;

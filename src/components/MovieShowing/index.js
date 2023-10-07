@@ -9,7 +9,7 @@ import MOVIES from "../../data/Movies";
 import settings from "./SettingSlick";
 import "./style.css";
 
-const MovieShowing = () => {
+const PreSaleTicket = () => {
   const showing = MOVIES.filter((movieShowing) => movieShowing.status === true);
   return (
     <Slider {...settings}>
@@ -36,4 +36,4 @@ const MovieShowing = () => {
   );
 };
 
-export default MovieShowing;
+export default PreSaleTicket;

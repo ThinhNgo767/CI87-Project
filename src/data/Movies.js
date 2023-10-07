@@ -188,6 +188,7 @@ const MOVIES = [
     category: "Adventure",
     videoDuration: "110 phút",
     status: false,
+    preSale: true,
   },
   {
     title: "KILLERS OF THE FLOWER MOON",
@@ -242,6 +243,7 @@ const MOVIES = [
     category: "Horor",
     videoDuration: "121 phút",
     status: false,
+    preSale: true,
   },
   {
     title: "THE MARVELS",
