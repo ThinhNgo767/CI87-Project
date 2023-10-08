@@ -11,8 +11,6 @@ import "./style.css";
 const ListMovie = () => {
   const [active , setActive] = useState("active")
   
-  
-  
   return (
     <div className="list-movie">
       <nav>

@@ -43,7 +43,7 @@ const LoginHeader = () => {
           </button>
           
             <form className="from-login">
-              <input type="text" placeholder="Email"/>
+              <input type="text" className="email-login" placeholder="Email"/>
               <input type="text" placeholder="Password"/>
               <div className="form-login-item">
                 <button type="button" className="form-button-login header_button--style">ĐĂNG NHẬP</button>
