@@ -1,31 +1,26 @@
 .list-promotion {
-  padding: 2rem 0rem;
+  /* padding: 2rem 0rem; */
 }
 .list-promotion ul {
   list-style: none;
   padding: 22px 0;
 }
 
-.nav--titles-promotion {
+.title-promotion {
   display: flex;
   justify-content: center;
 }
 
-.nav--titles-promotion > li {
+.title-promotion > li > h3 {
   text-transform: uppercase;
+  color: #bcdc95;
   margin: 0 10px;
-  font-size: 20px;
-  font-weight: 300;
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 900;
+  cursor: pointer;
 }
 
-.nav--titles-promotion > li > a {
-  text-decoration: none;
-  font-weight: 800;
-  color: #bcdc95;
-}
-
-.nav--titles-promotion > li > span {
-  text-decoration: none;
-  font-weight: 800;
-  color: #bcdc95;
+.active-promo {
+  border-bottom: 1px solid #bcdc95;
 }

@@ -1,30 +1,52 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import React, { useState } from "react";
 
 import Promotion from "../Promotion";
 import Event from "../Event";
 import "./style.css";
 
 function ListPromotion() {
+  const [activeTabPromotion, setActiveTabPromotion] = useState("tabPromo");
+  const handleTabPromotion = (tab) => {
+    setActiveTabPromotion(tab);
+  };
   return (
     <div className="list-promotion">
-      <nav>
-        <ul className="nav--titles-promotion">
+      <div className="nav--title-promotion">
+        <ul className="title-promotion">
           <li>
-            <Link to="/">Khuyến Mãi</Link>
+            <h3
+              className={
+                activeTabPromotion === "tabPromo" ? "active-promo" : ""
+              }
+              onClick={() => handleTabPromotion("tabPromo")}
+            >
+              Khuyến Mãi
+            </h3>
           </li>
           <li>
-            <span>|</span>
+            <h3>|</h3>
           </li>
           <li>
-            <Link to="/sukien">Sự Kiện</Link>
+            <h3
+              className={
+                activeTabPromotion === "tabEvent" ? "active-promo" : ""
+              }
+              onClick={() => handleTabPromotion("tabEvent")}
+            >
+              Sự Kiện
+            </h3>
           </li>
         </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Promotion />}></Route>
-        <Route path="/sukien" element={<Event />}></Route>
-      </Routes>
+        {activeTabPromotion === "tabPromo" ? (
+          <div>
+            <Promotion />
+          </div>
+        ) : (
+          <div>
+            <Event />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
