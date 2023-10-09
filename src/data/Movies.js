@@ -1,6 +1,6 @@
 const MOVIES = [
   {
-    id :1,
+    id: 1,
     title: "PAW PATROL : THE MIGHTY MOVIE",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002764?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -8,9 +8,10 @@ const MOVIES = [
     category: "Cal Brunker",
     videoDuration: "93 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id :2,
+    id: 2,
     title: "PAST LIVES",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002786?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -18,9 +19,10 @@ const MOVIES = [
     category: "Romance",
     videoDuration: "106 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:3,
+    id: 3,
     title: "MAN SUANG",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002774?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -28,9 +30,10 @@ const MOVIES = [
     category: "Mystery",
     videoDuration: "125 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:4,
+    id: 4,
     title: "THE CREATOR",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002790?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -38,9 +41,10 @@ const MOVIES = [
     category: "Sci-fi",
     videoDuration: "133 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:5,
+    id: 5,
     title: "BATMAN BEGINS",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002812?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -48,9 +52,10 @@ const MOVIES = [
     category: "Action",
     videoDuration: "140 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:6,
+    id: 6,
     title: "IU CONCERT : THE GOLDEN HOUR",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002793?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -58,9 +63,10 @@ const MOVIES = [
     category: "Musical",
     videoDuration: "171 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:7,
+    id: 7,
     title: "AFTER SUNDOWN",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002786?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -68,9 +74,10 @@ const MOVIES = [
     category: "Drama",
     videoDuration: "106 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:8,
+    id: 8,
     title: "THE EXPENDABLES 4",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002774?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -78,9 +85,10 @@ const MOVIES = [
     category: "Action",
     videoDuration: "103 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:9,
+    id: 9,
     title: "DONT BUY THE SELLER",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002777?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -88,9 +96,10 @@ const MOVIES = [
     category: "Drama",
     videoDuration: "101 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:10,
+    id: 10,
     title: "HONEYSWEET",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002744?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -98,9 +107,10 @@ const MOVIES = [
     category: "Comedy",
     videoDuration: "119 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:11,
+    id: 11,
     title: "THE NUN II",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002761?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -108,9 +118,10 @@ const MOVIES = [
     category: "Horror",
     videoDuration: "110 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:12,
+    id: 12,
     title: "INU-OH",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002780?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -118,9 +129,10 @@ const MOVIES = [
     category: "History",
     videoDuration: "98 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:13,
+    id: 13,
     title: "NOT QUITE DEAD YET",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002782?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -128,9 +140,10 @@ const MOVIES = [
     category: "Comedy",
     videoDuration: "93 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:14,
+    id: 14,
     title: "MY BOY FRIEND IN ORANGE",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002783?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -138,9 +151,10 @@ const MOVIES = [
     category: "Drama",
     videoDuration: "97 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:15,
+    id: 15,
     title: "WEDDING HIGH",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002784?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -148,9 +162,10 @@ const MOVIES = [
     category: "Drama",
     videoDuration: "120 phút",
     status: "active",
+    showTime: "ByMovie",
   },
   {
-    id:16,
+    id: 16,
     title: "LIVE - PHÁT TRỰC TIẾP",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002778?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -158,11 +173,12 @@ const MOVIES = [
     category: "Horror",
     videoDuration: "91 phút",
     status: "active",
+    showTime: "ByMovie",
   },
 
   // SẮP CHIẾU
   {
-    id:17,
+    id: 17,
     title: "CHIẾM ĐOẠT",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002790?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -170,9 +186,10 @@ const MOVIES = [
     category: "Drama",
     videoDuration: "97 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:18,
+    id: 18,
     title: "ĐẤT RỪNG PHƯƠNG NAM",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002812?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -180,9 +197,10 @@ const MOVIES = [
     category: "Documentary",
     videoDuration: "110 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:19,
+    id: 19,
     title: "DUNE : PART II",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002793?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -190,9 +208,10 @@ const MOVIES = [
     category: "Action",
     videoDuration: "120 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:20,
+    id: 20,
     title: "FIVE NIGHT AT FREDDY'S",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002786?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -200,9 +219,10 @@ const MOVIES = [
     category: "Horror",
     videoDuration: "110 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:21,
+    id: 21,
     title: "KILLERS OF THE FLOWER MOON",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002774?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -210,9 +230,10 @@ const MOVIES = [
     category: "Crime",
     videoDuration: "206 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:22,
+    id: 22,
     title: "KRAVEN THE HUNTER",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002777?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -220,9 +241,10 @@ const MOVIES = [
     category: "",
     videoDuration: "120 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:23,
+    id: 23,
     title: "MIGRATION",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002744?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -230,9 +252,10 @@ const MOVIES = [
     category: "Animation",
     videoDuration: "110 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:24,
+    id: 24,
     title: "NGƯỜI MẶT TRỜI",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002761?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -240,9 +263,10 @@ const MOVIES = [
     category: "Action",
     videoDuration: "101 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:25,
+    id: 25,
     title: "NGƯỜI VỢ CUỐI CÙNG",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002780?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -250,9 +274,10 @@ const MOVIES = [
     category: "Romance",
     videoDuration: "98 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:26,
+    id: 26,
     title: "THE EXORCIST : BELIEVER",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002782?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -260,9 +285,10 @@ const MOVIES = [
     category: "Horor",
     videoDuration: "121 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:27,
+    id: 27,
     title: "THE MARVELS",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002783?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -270,9 +296,10 @@ const MOVIES = [
     category: "Adventure",
     videoDuration: "95 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:28,
+    id: 28,
     title: "TROLLS BAND TOGETHER",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002784?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -280,9 +307,10 @@ const MOVIES = [
     category: "Animation",
     videoDuration: "110 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
   {
-    id:29,
+    id: 29,
     title: "TABOO - ĐIỀU CẤM KỴ KINH HOÀNG",
     thumnail:
       "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002778?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
@@ -290,6 +318,7 @@ const MOVIES = [
     category: "Horror",
     videoDuration: "90 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
   },
 ];
 
