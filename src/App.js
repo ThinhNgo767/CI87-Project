@@ -17,9 +17,10 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const App = () => {
+  const checkLogin = !!Cookies.get("token");
+
   const [users, setUsers] = useState([]);
-  const [token, setToken] = useState("");
-  
+  const [isLogin, setIsLogin] = useState(checkLogin);
 
   const urlUser = "https://65219433a4199548356d628d.mockapi.io/use";
 
@@ -31,19 +32,9 @@ const App = () => {
     handleFetchUser();
   }, []);
 
-  useEffect(() => {
-    const handleGetCookie = () => {
-      const userCookie = Cookies.get("token");
-      const cookieValue = userCookie !== undefined ? userCookie : [];
-      const decodedEmail = atob(cookieValue);
-      setToken(decodedEmail)
-    };
-    handleGetCookie();
-  },[]);
-
   return (
     <div className="App">
-      <Header users={users} token={token}/>
+      <Header users={users} isLogin={isLogin} setIsLogin={setIsLogin} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/lich-theo-chieu-phim" element={<ShowTimes />} />
@@ -51,7 +42,10 @@ const App = () => {
         <Route path="/khuyen-mai-su-kien" element={<PromotionsEvents />} />
         <Route path="/quang-cao" element={<Advertisement />} />
         <Route path="/ve-chung-toi" element={<Abouts />} />
-        <Route path="/dang-ky" element={<LoginRegister users={users}/>} />
+        <Route
+          path="/dang-ky"
+          element={<LoginRegister users={users} setIsLogin={setIsLogin} />}
+        />
         <Route path="/tai-khoan" element={<Infomation />} />
         <Route path="*" element={<Error />} />
       </Routes>

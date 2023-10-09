@@ -71,7 +71,6 @@ li {
 
 .section--product-view:before {
   content: "";
-  /* background: url(../../assets/images/movie-details-bg.jpg); */
   background-position: top;
   background-size: cover;
   background-attachment: fixed;
@@ -85,7 +84,6 @@ li {
 
 .section--product-view {
   padding: 70px 0 90px;
-  font-family: "proxima_nova";
   line-height: 29px;
   text-align: center;
   font-size: 24px;

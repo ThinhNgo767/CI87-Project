@@ -1,9 +1,12 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Link ,useNavigate} from "react-router-dom";
+import Cookies from "js-cookie";
 
-const LoginHeader = () => {
+const LoginHeader = ({users,setIsLogin}) => {
   const [openLogin, setOpenLogin] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const loginRef = useRef(null);
   const navigate = useNavigate();
 
@@ -30,6 +33,25 @@ const LoginHeader = () => {
     setOpenLogin(false)
   };
 
+  const handleLogin = () => {
+    const expirationDateToken = new Date();
+    expirationDateToken.setTime(expirationDateToken.getTime() + 30 * 60 * 1000);
+    const options = { expires: expirationDateToken };
+
+    const isUser = users.find(
+      (user) => email === user.email && password === user.password
+    );
+    
+    if (isUser) {
+      const encodedEmail = btoa(isUser.email);
+      Cookies.set("token", encodedEmail, options);
+      setEmail("")
+      setPassword("")
+      setIsLogin(true)
+      navigate("/")
+    }
+  };
+
   return (
     <div className="login_header" ref={loginRef}>
       {openLogin ? (
@@ -43,10 +65,10 @@ const LoginHeader = () => {
           </button>
           
             <form className="from-login">
-              <input type="text" className="email-login" placeholder="Email"/>
-              <input type="text" placeholder="Password"/>
+              <input type="text" className="email-login" onChange={(e)=> setEmail(e.target.value)} placeholder="Email" required/>
+              <input type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} required/>
               <div className="form-login-item">
-                <button type="button" className="form-button-login header_button--style">ĐĂNG NHẬP</button>
+                <button type="submit" onClick={handleLogin} className="form-button-login header_button--style">ĐĂNG NHẬP</button>
                 <Link to="/reset-password">Quên mật khẩu</Link>
               </div>
               <button type="button" onClick={handleSignUpClick} className="form-button-sigup header_button--style">ĐĂNG KÝ THÀNH VIÊN</button>

@@ -8,14 +8,15 @@
   top: 0;
   background: #000000;
 }
-.header a{
-  color: #616E72;
+.header a {
+  color: #616e72;
   font-weight: 600;
 }
-.header a:hover{
-  color: #D5DD29;
+.header a:hover {
+  color: #d5dd29;
 }
 .header--flex {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -51,13 +52,13 @@ button.header_button--toggle {
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-.nav-menu-toggle > li > a{
+.nav-menu-toggle > li > a {
   text-decoration: none;
-  color: #BFBFAF;
+  color: #bfbfaf;
   font-weight: 600;
 }
-.nav-menu-toggle > li > a:hover{
-  color: #BCD531;
+.nav-menu-toggle > li > a:hover {
+  color: #bcd531;
 }
 .toggle_button-size {
   font-size: 3rem;
@@ -97,32 +98,35 @@ button.header_button--toggle {
   gap: 1rem;
 }
 .header_logo {
+  width: 28%;
   z-index: 3;
 }
 .header .header_logo img.logo {
   width: 5rem;
 }
 .header_item--left {
+  width: 45%;
   margin-left: 2.5rem;
   padding-bottom: 0.75rem;
 }
 .header_item--right {
+  width: 30%;
   margin-right: 2.5rem;
   padding-bottom: 0.75rem;
 }
 .header_item {
   justify-content: space-between;
 }
-
 .image--line {
   position: absolute;
   top: 100%;
-  left: 44%;
-  transform: translate(-50%, 0%);
-  z-index: 2;
+  left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  width: 100vw;
 }
 .header_button_social {
   border: 2px solid #797e83;
@@ -151,8 +155,8 @@ button.header_button--toggle {
   background-color: #121825;
   position: absolute;
   padding: 1rem 4rem 3rem 4rem;
-    right: -2.5rem;
-    top: 3.5rem;
+  right: -2.5rem;
+  top: 3.5rem;
 }
 .from-login input {
   width: 20rem;
@@ -174,8 +178,8 @@ button.header_button--toggle {
   font-size: 0.9rem;
   width: 100%;
 }
-.form-button-sigup:hover{
-  background-color: #8AC441;
+.form-button-sigup:hover {
+  background-color: #8ac441;
 }
 
 .form-login-item {
@@ -183,6 +187,19 @@ button.header_button--toggle {
   align-items: center;
   justify-content: space-between;
 }
-.email-login{
+.email-login {
   margin-top: 1rem;
+}
+.already-login {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+.already-login li:first-child::after {
+  content: "|";
+  margin-left: 1rem;
 }

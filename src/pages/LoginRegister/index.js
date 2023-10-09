@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link , useNavigate} from "react-router-dom";
 import Cookies from "js-cookie";
 
-const LoginRegister = ({ users}) => {
+const LoginRegister = ({ users ,setIsLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
@@ -25,6 +25,7 @@ const LoginRegister = ({ users}) => {
       Cookies.set("token", encodedEmail, options);
       setEmail("")
       setPassword("")
+      setIsLogin(true)
       navigate("/")
     }
   };
