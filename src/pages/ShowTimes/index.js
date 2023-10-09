@@ -14,7 +14,13 @@ import settings from "./SettingSlick";
 import ListPromotion from "../../components/ListPromotion";
 
 const ShowTimes = () => {
-  const showing = MOVIES.filter((movieShowing) => movieShowing.status === true);
+  const [activeTab, setActiveTab] = useState("byMovie"); // Ban đầu, tab "LỊCH CHIẾU THEO PHIM" được chọn
+  const [activeTheaterTab, setActiveTheaterTab] = useState("tab1");
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <>
       <div className="warper-content">
