@@ -4,10 +4,11 @@ import LoginHeader from "../LoginHeader";
 
 import { FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ users, token }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,6 +30,10 @@ const Header = () => {
     };
   }, []);
 
+const isUser = users.filter(user => user.email === token)
+
+
+
   return (
     <div className={isScrolled ? "header scrolled-up" : "header scrolled-down"}>
       <MenuToggle />
@@ -36,57 +41,73 @@ const Header = () => {
       <div className="header--flex">
         <div className="header_item--left">
           <button
-          onClick={()=> {navigate("/lich-chieu-phim")}}
+            onClick={() => {
+              navigate("/lich-chieu-phim");
+            }}
             type="button"
             className="header_button_order-ticket header_button--style"
-          >MUA VÉ
-            
+          >
+            MUA VÉ
           </button>
         </div>
         <div className="header_logo">
           <Link to="/" title="logo">
-          <img
-            src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/logo.png"
-            alt="logo"
-            className="logo"
-          />
+            <img
+              src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/logo.png"
+              alt="logo"
+              className="logo"
+            />
           </Link>
-         
         </div>
         <div className="header_item--right">
-          <div className="header_social_login">
-            <Link
-              to="https://www.instagram.com/bhdstar.cineplex/"
-              target="_blank"
-              className="header_button_social" title="instagram"
-            >
-              <FaInstagram className="social" />
-            </Link>
-            <Link
-              to="https://www.facebook.com/BHDStar"
-              target="_blank"
-              className="header_button_social" title="facebook"
-            >
-              <FaFacebook className="social" />
-            </Link>
-            <Link
-              to="https://www.tiktok.com/@bhdstar.cineplex"
-              target="_blank"
-              className="header_button_social" title="tiktok"
-            >
-              <FaTiktok className="social" />
-            </Link>
-            <Link
-              to="https://www.youtube.com/user/BHDStar"
-              target="_blank"
-              className="header_button_social" title="youtube"
-            >
-              <FaYoutube className="social" />
-            </Link>
-          </div>
+          {token ? (
+            
+              <ul className="already-login">
+                <li></li>
+              </ul>
+            
+          ) : (
+            <>
+              <div className="header_social_login">
+                <Link
+                  to="https://www.instagram.com/bhdstar.cineplex/"
+                  target="_blank"
+                  className="header_button_social"
+                  title="instagram"
+                >
+                  <FaInstagram className="social" />
+                </Link>
+                <Link
+                  to="https://www.facebook.com/BHDStar"
+                  target="_blank"
+                  className="header_button_social"
+                  title="facebook"
+                >
+                  <FaFacebook className="social" />
+                </Link>
+                <Link
+                  to="https://www.tiktok.com/@bhdstar.cineplex"
+                  target="_blank"
+                  className="header_button_social"
+                  title="tiktok"
+                >
+                  <FaTiktok className="social" />
+                </Link>
+                <Link
+                  to="https://www.youtube.com/user/BHDStar"
+                  target="_blank"
+                  className="header_button_social"
+                  title="youtube"
+                >
+                  <FaYoutube className="social" />
+                </Link>
+              </div>
+              <LoginHeader />
+            </>
+          )}
         </div>
       </div>
-      <LoginHeader />
+
       <img
         src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/line-header1.png"
         alt="line"

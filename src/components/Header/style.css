@@ -142,9 +142,7 @@ button.header_button--toggle {
   top: -7.5rem;
 }
 .login_header {
-  padding-bottom: 0.75rem;
   position: relative;
-  padding-right: 2rem;
 }
 .from-login {
   display: flex;
@@ -152,12 +150,12 @@ button.header_button--toggle {
   gap: 1rem;
   background-color: #121825;
   position: absolute;
-  padding: 1rem 3rem 3rem 3rem;
-  right: 0;
-  top: 3.5rem;
+  padding: 1rem 4rem 3rem 4rem;
+    right: -2.5rem;
+    top: 3.5rem;
 }
 .from-login input {
-  width: 18vw;
+  width: 20rem;
   height: 2.2rem;
   font-size: 1rem;
   padding-left: 0.5rem;
@@ -184,4 +182,7 @@ button.header_button--toggle {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.email-login{
+  margin-top: 1rem;
 }
