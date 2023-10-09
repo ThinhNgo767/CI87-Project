@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 import MOVIES from "../../data/Movies";
 import HoChiMinh from "../../components/Location/hochiminh";
@@ -61,8 +62,8 @@ const ShowTimes = () => {
                 <div>
                   <ul className="list--location">
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className={
                           activeTheaterTab === "tab1"
                             ? "active-theater-tab"
@@ -89,11 +90,11 @@ const ShowTimes = () => {
                           src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/img-shadow.png"
                         />
                         <span>TP HỒ CHÍ MINH</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className={
                           activeTheaterTab === "tab2"
                             ? "active-theater-tab"
@@ -120,11 +121,11 @@ const ShowTimes = () => {
                           src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/img-shadow.png"
                         />
                         <span>TP HÀ NỘI</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className={
                           activeTheaterTab === "tab3"
                             ? "active-theater-tab"
@@ -151,11 +152,11 @@ const ShowTimes = () => {
                           src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/img-shadow.png"
                         />
                         <span>TP HUẾ</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className={
                           activeTheaterTab === "tab4"
                             ? "active-theater-tab"
@@ -182,7 +183,7 @@ const ShowTimes = () => {
                           src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/img-shadow.png"
                         />
                         <span>TP LONG KHÁNH</span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                   {activeTheaterTab === "tab1" && (
