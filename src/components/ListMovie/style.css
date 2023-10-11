@@ -1,4 +1,4 @@
-.list-movie{
+.list-movie {
   height: 100%;
   padding: 1rem 0;
   padding-top: 2rem;
@@ -14,26 +14,34 @@
   justify-content: center;
 }
 
-.nav--titles > li {
+.nav--titles li {
   text-transform: uppercase;
   margin: 0 10px;
   font-size: 20px;
   font-weight: 300;
+  transition: 0.4s ease all;
+  -moz-transition: 0.4s ease all;
+  -o-transition: 0.4s ease all;
+  -ms-transition: 0.4s ease all;
+  -webkit-transition: 0.4s ease all;
 }
 
-.nav--titles > li > a {
+.nav--titles h3 {
   text-decoration: none;
-  color: #ffffff;
   margin: 20px 12px 15px;
   font-weight: 600;
+  transition: 0.4s ease all;
+  -moz-transition: 0.4s ease all;
+  -o-transition: 0.4s ease all;
+  -ms-transition: 0.4s ease all;
+  -webkit-transition: 0.4s ease all;
 }
 
-.nav--titles > li > a:hover {
- 
+.nav--titles h3:hover {
   color: #d4dd29;
   border-bottom: 1px solid #d4dd29;
 }
-.nav--titles > li > a.active-link{
+.active-link {
   color: #d4dd29;
   border-bottom: 1px solid #d4dd29;
 }

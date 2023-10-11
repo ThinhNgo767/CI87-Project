@@ -11,16 +11,15 @@
   justify-content: center;
 }
 
-.title-promotion > li > h3 {
+.title-promotion h3 {
   text-transform: uppercase;
-  color: #bcdc95;
   margin: 0 10px;
   font-size: 28px;
   line-height: 40px;
   font-weight: 900;
-  cursor: pointer;
 }
 
 .active-promo {
+  color: #bcdc95;
   border-bottom: 1px solid #bcdc95;
 }

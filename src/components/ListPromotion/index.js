@@ -19,6 +19,7 @@ function ListPromotion() {
                 activeTabPromotion === "tabPromo" ? "active-promo" : ""
               }
               onClick={() => handleTabPromotion("tabPromo")}
+              style={{ cursor: "pointer" }}
             >
               Khuyến Mãi
             </h3>
@@ -32,6 +33,7 @@ function ListPromotion() {
                 activeTabPromotion === "tabEvent" ? "active-promo" : ""
               }
               onClick={() => handleTabPromotion("tabEvent")}
+              style={{ cursor: "pointer" }}
             >
               Sự Kiện
             </h3>

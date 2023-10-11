@@ -1,7 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 import { GiTicket } from "react-icons/gi";
-import { Button } from "antd";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -22,15 +21,20 @@ const PreSaleTickets = () => {
             <p className="title-movie">{movie.title}</p>
           </div>
           <div className="card-bottom">
-            <Button
+            <a
+              href="*"
               className="btn-antd"
-              type="primary"
-              size="lagre"
-              style={{ backgroundColor: "#45AB3C", width: "100%" }}
+              style={{
+                color: "#fff",
+                backgroundColor: "#45AB3C",
+                width: "100%",
+                height: "45px",
+                borderRadius: "3px",
+              }}
             >
               <GiTicket />
               Mua vé
-            </Button>
+            </a>
           </div>
         </div>
       ))}
