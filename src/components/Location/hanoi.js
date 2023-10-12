@@ -9,7 +9,7 @@ function HaNoi() {
       {hanoi.map((local) => (
         <li>
           <div className="info">
-            <a className="inside" style={{ display: "block" }} href="#">
+            <a className="inside" style={{ display: "block" }} href="*">
               <h4 className="title-bhd">{local.name}</h4>
               <p>{local.address}</p>
             </a>
