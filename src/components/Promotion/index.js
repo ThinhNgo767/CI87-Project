@@ -16,6 +16,7 @@ function Promotion() {
           {promo.map((promo) => (
             <div
               className="img--promo"
+              key={promo.id}
               style={{
                 width: "430px",
                 marginRight: "24px",
