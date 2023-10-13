@@ -6,7 +6,10 @@ import gold from "../../assets/images/GOLD.png";
 import diamond from "../../assets/images/DIAMOND.png";
 import "./style.css";
 
+import { Link } from "react-router-dom";
+
 const CardsMember = () => {
+  
   return (
     <div className="container">
       <img className="img-title" src={imgTitle} alt="imgTitle" />
@@ -33,9 +36,9 @@ const CardsMember = () => {
           </li>
         </ul>
       </div>
-      <a className="btn-white" href="/">
+      <Link className="btn-white" to="/dang-ky">
         ĐĂNG KÝ NGAY
-      </a>
+      </Link>
     </div>
   );
 };

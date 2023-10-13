@@ -1,0 +1,59 @@
+.info-bottom {
+  min-width: 80%;
+  background-color: #1c262f;
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+.infomation-user {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0 3rem 2rem;
+}
+.infomation-user label {
+  max-width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.infomation-user p {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  align-items: center;
+  padding-top: 1rem;
+}
+.infomation-user input {
+  border: none;
+  outline: none;
+  min-width: 25rem;
+  height: 2rem;
+  background-color: #37424b;
+  color: #70808e;
+  font-weight: 600;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+.infomation-user label,
+.infomation-user p {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.infomation-user .location {
+  padding-top: 1rem;
+}
+.pass-user button ,.chang-pass-user button{
+  width: 8rem;
+  height: 2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+label.pass-user input{
+  min-width: 10rem;
+  margin-left: 7.3rem;
+}
+label.chang-pass-user input{
+  min-width: 10rem;
+  margin-left: 5.3rem;
+}
+

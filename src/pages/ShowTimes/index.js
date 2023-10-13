@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 
-import MOVIES from "../../data/Movies";
 import HoChiMinh from "../../components/Location/hochiminh";
 import HaNoi from "../../components/Location/hanoi";
 import Hue from "../../components/Location/hue";
 import LongKhanh from "../../components/Location/longkhanh";
+
 
 import "./style.css";
 import "slick-carousel/slick/slick.css";
@@ -14,13 +14,15 @@ import "slick-carousel/slick/slick-theme.css";
 import settings from "./SettingSlick";
 import ListPromotion from "../../components/ListPromotion";
 
-const ShowTimes = () => {
+const ShowTimes = ({movies}) => {
   const [activeTab, setActiveTab] = useState("byMovie"); // Ban đầu, tab "LỊCH CHIẾU THEO PHIM" được chọn
   const [activeTheaterTab, setActiveTheaterTab] = useState("tab1");
+  const navigate = useNavigate();
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
+ 
 
   return (
     <>
@@ -46,8 +48,10 @@ const ShowTimes = () => {
               {activeTab === "byMovie" ? (
                 <div>
                   <Slider {...settings}>
-                    {MOVIES.map((movie) => (
-                      <div className="card" key={movie.id}>
+                    {movies.map((movie) => (
+                      <div className="card" key={movie.id} onClick={() => {
+                        navigate(`/movie/${movie.id}`);
+                      }}>
                         <div className="card-top">
                           <img src={movie.thumnail} alt={movie.title} />
                           <p className="title-movie">{movie.title}</p>

@@ -1,4 +1,7 @@
 import "./App.css";
+import { fetchUser } from "./api/users";
+import { fetchMovies } from "./api/movies";
+import { useAuth } from "./hooks/useAuth";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -6,47 +9,93 @@ import Cinema from "./pages/Cinema";
 import ShowTimes from "./pages/ShowTimes";
 import Advertisement from "./pages/Advertisement";
 import PromotionsEvents from "./pages/PromotionsEvents";
+import Movie from "./pages/Movie";
 import Abouts from "./pages/Abouts";
 import LoginRegister from "./pages/LoginRegister";
-import Infomation from "./pages/Account";
+import Account from "./pages/Account";
 import Error from "./pages/Error";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import Cookies from "js-cookie";
+
 
 const App = () => {
-  const checkLogin = !!Cookies.get("token");
-
+  const [movies, setMovies] = useState([]);
   const [users, setUsers] = useState([]);
-  const [isLogin, setIsLogin] = useState(checkLogin);
-
-  const urlUser = "https://65219433a4199548356d628d.mockapi.io/use";
+  const {isLogin, setIsLogin} = useAuth();
 
   useEffect(() => {
-    const handleFetchUser = async () => {
-      const response = await axios.get(urlUser);
-      setUsers(response.data);
+    const fetchDataUserFromAPI = async () => {
+      try {
+        const resultUser = await fetchUser();
+        if (resultUser.length > 0) {
+          setUsers(resultUser);
+        }
+      } catch (error) {
+        return -1;
+      }
     };
-    handleFetchUser();
+
+    fetchDataUserFromAPI();
   }, []);
+
+  useEffect(() => {
+    const fetchDataMoviesFromAPI = async () => {
+      try {
+        const resultMovies = await fetchMovies();
+        if (resultMovies.length > 0) {
+          setMovies(resultMovies);
+        }
+      } catch (error) {
+        return -1;
+      }
+    };
+
+    fetchDataMoviesFromAPI();
+  }, []);
+
 
   return (
     <div className="App">
       <Header users={users} isLogin={isLogin} setIsLogin={setIsLogin} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/lich-theo-chieu-phim" element={<ShowTimes />} />
+        <Route path="/" element={<Home movies={movies} />} />
+        <Route
+          path="/lich-theo-chieu-phim"
+          element={<ShowTimes movies={movies} />}
+        />
         <Route path="/he-thong-rap" element={<Cinema />} />
         <Route path="/khuyen-mai-su-kien" element={<PromotionsEvents />} />
         <Route path="/quang-cao" element={<Advertisement />} />
         <Route path="/ve-chung-toi" element={<Abouts />} />
+
         <Route
           path="/dang-ky"
-          element={<LoginRegister users={users} setIsLogin={setIsLogin} />}
+          element={
+            isLogin ? (
+              <Navigate to="/tai-khoan" replace={true} />
+            ) : (
+              <LoginRegister
+                users={users}
+                setUsers={setUsers}
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+              />
+            )
+          }
         />
-        <Route path="/tai-khoan" element={<Infomation />} />
+
+        <Route
+          path="/tai-khoan"
+          element={
+            isLogin ? (
+              <Account users={users} isLogin={isLogin} />
+            ) : (
+              <Navigate to="/dang-ky" replace={true} />
+            )
+          }
+        />
+        <Route path="/movie/:movieId" element={<Movie movies={movies} />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

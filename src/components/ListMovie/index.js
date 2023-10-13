@@ -8,7 +8,7 @@ import PreSaleTickets from "../PreSaleTickets";
 
 
 import "./style.css";
-const ListMovie = () => {
+const ListMovie = ({movies}) => {
   const [active , setActive] = useState("active")
   
   return (
@@ -22,15 +22,15 @@ const ListMovie = () => {
             <Link to="/" onClick={()=> setActive("comingsoon")} className={active === "comingsoon" ? "active-link":""}>Phim Sắp Chiếu</Link>
           </li>
           <li> 
-            <Link to="/vebantruoc">Vé Bán Trước</Link>
+          <Link to="/" onClick={()=> setActive("presale")} className={active === "presale" ? "active-link":""}>Vé Bán Trước</Link>
           </li>
         </ul>
       </nav>
-      {active === "active" && <MovieShowing/>}
-      {active === "comingsoon" && <UpComingMoive/>}
-      
+      {active === "active" && <MovieShowing movies={movies}/>}
+      {active === "comingsoon" && <UpComingMoive movies={movies}/>}
+      {active === "presale" && <PreSaleTickets movies={movies}/>}
     </div>
-  );
+  )
 };
 
 export default ListMovie;

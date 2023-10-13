@@ -203,3 +203,13 @@ button.header_button--toggle {
   content: "|";
   margin-left: 1rem;
 }
+a.login-name , a.log-out{
+  text-decoration: none;
+}
+a.login-name{
+  
+  color: #89C441;
+}
+a.log-out{
+  color: #fff;
+}

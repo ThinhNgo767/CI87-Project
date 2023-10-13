@@ -1,3 +1,33 @@
-.regulation{
-    background: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-cinema-10.png) repeat;
+.regulation {
+  background: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-cinema-10.png)
+    repeat;
+    display: grid;
+    place-items: center;
+}
+.regulation-content {
+    background-color: #1c262f;
+    padding: 1rem;
+    max-width: 80%;
+}
+.regulation-content h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.regulation-content h3, .regulation-content h4{
+    margin: 1rem 0;
+}
+.regulation-content p{
+    margin: 0.25rem 0;
+}
+.regulation-content a {
+  color: #54ab35;
+  text-decoration: none;
+  font-weight: 600;
+}
+.regulation-content a:hover {
+  color: #c4d72f;
+}
+.regulation-content img{
+    max-width: 100%;
+    margin-top: 1rem;
 }

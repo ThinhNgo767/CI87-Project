@@ -11,8 +11,9 @@ const Header = ({ users, isLogin, setIsLogin }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navigate = useNavigate();
-  const decodedEmail = atob(Cookies.get("token") ?? "");
-  const user = users.find((user) => user.email === decodedEmail);
+
+  const token = atob(Cookies.get("token") ?? "");
+  const user = users.find((user) => user.email === token);
 
   useEffect(() => {
     let prevScrollpos = window.scrollY;
@@ -36,7 +37,10 @@ const Header = ({ users, isLogin, setIsLogin }) => {
   const handleLogout = () => {
     Cookies.remove("token");
     setIsLogin(false);
+    
   };
+
+
 
   return (
     <div className={isScrolled ? "header scrolled-up" : "header scrolled-down"}>
@@ -46,7 +50,7 @@ const Header = ({ users, isLogin, setIsLogin }) => {
         <div className="header_item--left">
           <button
             onClick={() => {
-              navigate("/lich-chieu-phim");
+              navigate("/lich-theo-chieu-phim");
             }}
             type="button"
             className="header_button_order-ticket header_button--style"
@@ -66,9 +70,18 @@ const Header = ({ users, isLogin, setIsLogin }) => {
         <div className="header_item--right">
           {isLogin ? (
             <ul className="already-login">
-              <li>{user && user.lastName}</li>
               <li>
-                <Link onClick={handleLogout}>thoát</Link>
+                <Link to="/tai-khoan" className="login-name">
+                  {user && user.lastName}
+                </Link>
+              </li>
+              <li>
+                <Link to="/"
+                  className="log-out"
+                  onClick={handleLogout}
+                >
+                  thoát
+                </Link>
               </li>
             </ul>
           ) : (
@@ -107,7 +120,11 @@ const Header = ({ users, isLogin, setIsLogin }) => {
                   <FaYoutube className="social" />
                 </Link>
               </div>
-              <LoginHeader users={users} setIsLogin={setIsLogin} />
+              <LoginHeader
+                users={users}
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+              />
             </>
           )}
         </div>

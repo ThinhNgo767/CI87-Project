@@ -4,18 +4,20 @@ import { GiTicket } from "react-icons/gi";
 import { Button } from "antd";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import MOVIES from "../../data/Movies";
+import { useNavigate } from "react-router-dom";
 import settings from "./SettingSlick";
 import "./style.css";
 
-const MovieShowing = () => {
-  const showing = MOVIES.filter((movieShowing) => movieShowing.status === "active");
+const MovieShowing = ({movies}) => {
+  const navigate = useNavigate();
+  const showing = movies.filter((movieShowing) => movieShowing.status === "active");
   return (
     <Slider {...settings}>
       {showing.map((movie) => (
         <div className="card" key={movie.id}>
-          <div className="card-top">
+          <div className="card-top" onClick={() => {
+                navigate(`/movie/${movie.id}`);
+              }}>
             <img src={movie.thumnail} alt={movie.title} />
             <p className="title-movie">{movie.title}</p>
           </div>
@@ -28,6 +30,9 @@ const MovieShowing = () => {
                 backgroundColor: "#45AB3C",
                 width: "100%",
                 height: "40px",
+              }}
+              onClick={() => {
+                navigate(`/movie/${movie.id}`);
               }}
             >
               <GiTicket />

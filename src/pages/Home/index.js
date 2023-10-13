@@ -7,12 +7,13 @@ import ListPromotion from "../../components/ListPromotion";
 
 import "./style.css";
 
-const Home = () => {
+const Home = ({movies}) => {
+
   return (
     <div className="home-page">
       <Banner />
       <div className="section--product-view">
-        <ListMovie />
+        <ListMovie movies={movies} />
       </div>
       <div className="section--member">
         <CardsMember />

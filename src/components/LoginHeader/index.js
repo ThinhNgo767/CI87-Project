@@ -1,13 +1,15 @@
-
 import { useState, useRef, useEffect } from "react";
-import { Link ,useNavigate} from "react-router-dom";
-import Cookies from "js-cookie";
+import { Link, useNavigate } from "react-router-dom";
 
-const LoginHeader = ({users,setIsLogin}) => {
+import { useInput } from "../../hooks/useInput";
+import { handleLogin } from "../../utils/login";
+
+const LoginHeader = ({ users, isLogin, setIsLogin }) => {
   const [openLogin, setOpenLogin] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const email = useInput();
+  const password = useInput();
   const loginRef = useRef(null);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,25 +32,15 @@ const LoginHeader = ({users,setIsLogin}) => {
 
   const handleSignUpClick = () => {
     navigate("/dang-ky");
-    setOpenLogin(false)
+    setOpenLogin(false);
   };
 
-  const handleLogin = () => {
-    const expirationDateToken = new Date();
-    expirationDateToken.setTime(expirationDateToken.getTime() + 30 * 60 * 1000);
-    const options = { expires: expirationDateToken };
+  const userLogin = () => {
+    const login = handleLogin(users, email.value, password.value);
 
-    const isUser = users.find(
-      (user) => email === user.email && password === user.password
-    );
-    
-    if (isUser) {
-      const encodedEmail = btoa(isUser.email);
-      Cookies.set("token", encodedEmail, options);
-      setEmail("")
-      setPassword("")
-      setIsLogin(true)
-      navigate("/")
+    if (login) {
+      setIsLogin(true);
+      navigate("/tai-khoan")
     }
   };
 
@@ -63,17 +55,43 @@ const LoginHeader = ({users,setIsLogin}) => {
           >
             ĐĂNG NHẬP
           </button>
-          
-            <form className="from-login">
-              <input type="text" className="email-login" onChange={(e)=> setEmail(e.target.value)} placeholder="Email" required/>
-              <input type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} required/>
-              <div className="form-login-item">
-                <button type="submit" onClick={handleLogin} className="form-button-login header_button--style">ĐĂNG NHẬP</button>
-                <Link to="/reset-password">Quên mật khẩu</Link>
-              </div>
-              <button type="button" onClick={handleSignUpClick} className="form-button-sigup header_button--style">ĐĂNG KÝ THÀNH VIÊN</button>
-            </form>
-         
+
+          <form className="from-login">
+            <input
+              type="text"
+              className="email-login"
+              value={email.value}
+              onChange={email.onChange}
+              placeholder="Email"
+              autoComplete="username"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password.value}
+              onChange={password.onChange}
+              autoComplete="current-password"
+              required
+            />
+            <div className="form-login-item">
+              <button
+                type="submit"
+                onClick={userLogin}
+                className="form-button-login header_button--style"
+              >
+                ĐĂNG NHẬP
+              </button>
+              <Link to="/reset-password">Quên mật khẩu</Link>
+            </div>
+            <button
+              type="button"
+              onClick={handleSignUpClick}
+              className="form-button-sigup header_button--style"
+            >
+              ĐĂNG KÝ THÀNH VIÊN
+            </button>
+          </form>
         </>
       ) : (
         <>
