@@ -16,6 +16,7 @@ function Event() {
           {event.map((event) => (
             <div
               className="img--promo"
+              key={event.id}
               style={{
                 width: "430px",
                 marginRight: "24px",
