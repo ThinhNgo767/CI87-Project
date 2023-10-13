@@ -21,7 +21,7 @@ const App = () => {
   const [users, setUsers] = useState([]);
   const [token, setToken] = useState("");
 
-  const urlUser = "https://65219433a4199548356d628d.mockapi.io/use";
+  const urlUser = "https://65219433a4199548356d628d.mockapi.io/user";
 
   useEffect(() => {
     const handleFetchUser = async () => {
