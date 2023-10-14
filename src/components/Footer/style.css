@@ -38,6 +38,17 @@
   margin-top: 1rem;
   font-weight: 600;
 }
+
+.footer ul > li a {
+  text-decoration: none;
+  color: #c3cc26;
+  cursor: pointer;
+}
+
+.footer ul > li a:hover {
+  border-bottom: 1px solid #c3cc26;
+}
+
 .footer .title {
   text-transform: uppercase;
   position: relative;

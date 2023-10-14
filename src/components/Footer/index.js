@@ -17,9 +17,15 @@ const Footer = () => {
             <h3 className="title">về bhd star</h3>
             <div className="menu-intro">
               <ul>
-                <li>hệ thống rạp</li>
-                <li>tuyển dụng</li>
-                <li>liên hệ</li>
+                <li>
+                  <a href="/he-thong-rap">hệ thống rạp</a>
+                </li>
+                <li>
+                  <a href="*">tuyển dụng</a>
+                </li>
+                <li>
+                  <a href="/lien-he">liên hệ</a>
+                </li>
               </ul>
               <a href="*" style={{ position: "absolute", bottom: "136px" }}>
                 <img

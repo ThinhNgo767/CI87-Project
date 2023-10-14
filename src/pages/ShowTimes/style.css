@@ -147,7 +147,7 @@ svg::before {
 .product--title {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .product--title h3 {
