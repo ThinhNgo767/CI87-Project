@@ -197,6 +197,7 @@ const MOVIES = [
     category: "Documentary",
     videoDuration: "110 phút",
     status: "comingsoon",
+    preSale: true,
     showTime: "ByTheater",
   },
   {
@@ -285,6 +286,7 @@ const MOVIES = [
     category: "Horor",
     videoDuration: "121 phút",
     status: "comingsoon",
+    preSale: true,
     showTime: "ByTheater",
   },
   {
@@ -318,6 +320,18 @@ const MOVIES = [
     category: "Horror",
     videoDuration: "90 phút",
     status: "comingsoon",
+    showTime: "ByTheater",
+  },
+  {
+    id: 30,
+    title: "TẾU TÍ TỞN",
+    thumnail:
+      "https://booking.bhdstar.vn/CDN/media/entity/get/FilmPosterGraphic/HO00002769?referenceScheme=HeadOffice&allowPlaceHolder=true&height=500",
+    director: "Vũ Thành",
+    category: "Comedy",
+    videoDuration: "105 phút",
+    status: "comingsoon",
+    preSale: true,
     showTime: "ByTheater",
   },
 ];

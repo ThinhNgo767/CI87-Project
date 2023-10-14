@@ -1,6 +1,6 @@
 import "./style.css"
 import Infomation from './components/Infomation';
-import Regulation from "./components/Regulation";
+import Regulation from "../../components/Regulation";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ const [active,setActive]= useState("info")
         <Link to="#" onClick={()=>setActive("regula")}className={active === "regula" ? "navigate-active":""}>quy định </Link>
       </div>
        {active === "info" && <Infomation  users={users} isLogin={isLogin}/> } 
-       {active === "regula" && <Regulation /> } 
+       {active === "regula" && <div className="account-regulation"><Regulation /></div> } 
     </div>
   );
 

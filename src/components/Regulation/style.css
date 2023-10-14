@@ -3,6 +3,8 @@
     repeat;
     display: grid;
     place-items: center;
+    padding-top: 5rem;
+
 }
 .regulation-content {
     background-color: #1c262f;
@@ -28,6 +30,12 @@
   color: #c4d72f;
 }
 .regulation-content img{
-    max-width: 100%;
-    margin-top: 1rem;
+  width: 100%;
+  padding-top: 1rem;
+}
+.regulation .list-promotion{
+  background-color: #151515;
+    max-width: 80%;
+    margin: 2rem;
+    border-radius: 5px;
 }

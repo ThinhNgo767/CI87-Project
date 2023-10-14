@@ -6,7 +6,7 @@
   padding-bottom: 0.75rem;
   position: sticky;
   top: 0;
-  background: #000000;
+  background-color: #131c23;
 }
 .header a {
   color: #616e72;
@@ -39,18 +39,21 @@ button.header_button--toggle {
   color: #fff;
   position: absolute;
   top: 5.5rem;
-  background-color: black;
+  background-color: #141414;
   padding: 1rem 5rem 1rem 1rem;
   list-style: none;
-  width: fit-content;
+  max-width: 30rem;
+  min-height: 20rem;
   transition: transform 0.5s ease-out;
+  padding-right: 8rem;
 }
 
 .nav-menu-toggle > li {
-  margin: 1rem 0rem;
-  padding-left: 1rem;
-  font-size: 1.2rem;
+  margin: 0.75rem 0rem;
+  padding: 0.5rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
+  margin-left: 0.5rem;
 }
 .nav-menu-toggle > li > a {
   text-decoration: none;
@@ -127,12 +130,13 @@ button.header_button--toggle {
   transform: translate(-50%, 0%);
   z-index: 2;
   width: 100vw;
+  
 }
 .header_button_social {
   border: 2px solid #797e83;
   padding: 0.2rem 0.4rem;
   border-radius: 10px;
-  background-color: #000;
+  background-color: #131c23;
 }
 .social {
   font-size: 2rem;
@@ -203,13 +207,13 @@ button.header_button--toggle {
   content: "|";
   margin-left: 1rem;
 }
-a.login-name , a.log-out{
+a.login-name,
+a.log-out {
   text-decoration: none;
 }
-a.login-name{
-  
-  color: #89C441;
+a.login-name {
+  color: #89c441;
 }
-a.log-out{
+a.log-out {
   color: #fff;
 }

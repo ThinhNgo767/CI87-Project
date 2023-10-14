@@ -1,15 +1,15 @@
 import "./style.css";
 
-const Abouts = ({theaters}) => {
+const Contact= () => {
   return (
-    <div className="warper-content">
-      <div className="page--wrapper">
-        <div className="container">
-          <h1 className="about--us-title">GIỚI THIỆU</h1>
-          <div className="about--us-content">
-            <h3 className="content--title">Về chúng tôi</h3>
-            <span className="date">18/07/2017</span>
-            <div className="text--content">
+    <div className="contact-warper-content">
+      <div className="contact-page--wrapper">
+        <div className="contact-container">
+          <h1 className="contact-about--us-title">GIỚI THIỆU</h1>
+          <div className="contact-about--us-content">
+            <h3 class="contact-content--title">Về chúng tôi</h3>
+            <span class="contact-date">18/07/2017</span>
+            <div class="contact-text--content">
               <p style={{ textAlign: "left" }}>
                 <span style={{ color: "#16a600" }}>
                   <strong>BHD Star Cineplex</strong>
@@ -63,12 +63,12 @@ const Abouts = ({theaters}) => {
               </p>
               <p style={{ textAlign: "center" }}>
                 <img
-                  className="aligncenter size-full wp-image-890"
+                  class="aligncenter size-full wp-image-890"
                   src="http://bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1.jpg"
                   alt="thank-you-bhd"
                   width="313"
                   height="245"
-                  srcSet="https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1.jpg 313w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-245x192.jpg 245w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-210x164.jpg 210w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-103x81.jpg 103w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-268x210.jpg 268w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-270x211.jpg 270w"
+                  srcset="https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1.jpg 313w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-245x192.jpg 245w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-210x164.jpg 210w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-103x81.jpg 103w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-268x210.jpg 268w, https://www.bhdstar.vn/wp-content/uploads/2016/05/thank-you-bhd-1-270x211.jpg 270w"
                   sizes="(max-width: 313px) 100vw, 313px"
                 />
               </p>
@@ -84,75 +84,73 @@ const Abouts = ({theaters}) => {
             </div>
           </div>
           <div className="about--us-sidebar">
-            <ul className="list-cinema">
+            <ul class="list-cinema">
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR LONG KHÁNH</span>
                 </a>
               </li>
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR THE GARDEN</span>
                 </a>
               </li>
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR DISCOVERY</span>
                 </a>
               </li>
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR HUẾ</span>
                 </a>
               </li>
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR PHẠM NGỌC THẠCH</span>
                 </a>
               </li>
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR LÊ VĂN VIỆT</span>
                 </a>
               </li>
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR THẢO ĐIỀN</span>
                 </a>
               </li>
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR QUANG TRUNG</span>
                 </a>
               </li>
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR PHẠM HÙNG</span>
                 </a>
               </li>
               <li>
-                <a className="item--cinema" href="*">
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <a class="item--cinema" href="*">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>BHD STAR 3/2</span>
                 </a>
               </li>
             </ul>
-            
           </div>
-          
         </div>
       </div>
     </div>
   );
 };
 
-export default Abouts;
+export default Contact;

@@ -14,7 +14,7 @@ function HoChiMinh() {
               <h4 className="title-bhd">{local.name}</h4>
               <p>{local.address}</p>
             </Link>
-            <a
+            <Link
               className="btn--location"
               href="https://www.google.com/maps/search/"
             >
@@ -32,7 +32,7 @@ function HoChiMinh() {
                 </svg>
               </i>
               Xem
-            </a>
+            </Link>
           </div>
         </li>
       ))}

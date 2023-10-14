@@ -32,7 +32,20 @@
 }
 
 .title-movie {
+  font-size: 18px;
+  width: 200px;
+  height: 76px;
+  line-height: 22px;
   text-align: center;
   font-weight: bold;
   color: white;
+  transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
+.title-movie:hover {
+  color: #c3c26c;
 }

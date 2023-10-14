@@ -1,6 +1,6 @@
 import "./App.css";
 import { fetchUser } from "./api/users";
-import { fetchMovies } from "./api/movies";
+import {fetchMovies} from "./api/movies"
 import { useAuth } from "./hooks/useAuth";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -12,6 +12,7 @@ import PromotionsEvents from "./pages/PromotionsEvents";
 import Movie from "./pages/Movie";
 import Abouts from "./pages/Abouts";
 import LoginRegister from "./pages/LoginRegister";
+import Regulation from "./components/Regulation";
 import Account from "./pages/Account";
 import Error from "./pages/Error";
 
@@ -45,6 +46,7 @@ const App = () => {
         const resultMovies = await fetchMovies();
         if (resultMovies.length > 0) {
           setMovies(resultMovies);
+          
         }
       } catch (error) {
         return -1;
@@ -64,10 +66,10 @@ const App = () => {
           path="/lich-theo-chieu-phim"
           element={<ShowTimes movies={movies} />}
         />
-        <Route path="/he-thong-rap" element={<Cinema />} />
-        <Route path="/khuyen-mai-su-kien" element={<PromotionsEvents />} />
+        <Route path="/he-thong-rap" element={<Cinema movies={movies} />} />
+        <Route path="/khuyen-mai-su-kien" element={<PromotionsEvents movies={movies} />} />
         <Route path="/quang-cao" element={<Advertisement />} />
-        <Route path="/ve-chung-toi" element={<Abouts />} />
+        <Route path="/ve-chung-toi" element={<Abouts/>} />
 
         <Route
           path="/dang-ky"
@@ -95,6 +97,7 @@ const App = () => {
             )
           }
         />
+        <Route path="/quy-dinh-thanh-vien" element={<Regulation/>}/>
         <Route path="/movie/:movieId" element={<Movie movies={movies} />} />
         <Route path="*" element={<Error />} />
       </Routes>

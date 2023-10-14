@@ -5,7 +5,7 @@ const settings = {
   slidesToShow: 6,
   slidesToScroll: 1,
   initialSlide: 0,
-  autoplay: true,
+  autoplay: false,
   responsive: [
     {
       breakpoint: 1024,

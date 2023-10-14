@@ -1,10 +1,10 @@
 import React from "react";
-import {  Link } from "react-router-dom";
 import { useState } from "react";
 
 import MovieShowing from "../MovieShowing";
 import UpComingMoive from "../UpcomingMovie";
 import PreSaleTickets from "../PreSaleTickets";
+
 
 
 import "./style.css";
@@ -16,19 +16,34 @@ const ListMovie = ({movies}) => {
       <nav>
         <ul className="nav--titles">
           <li>
-            <Link to="/" onClick={()=> setActive("active")} className={active === "active" ? "active-link":""}>Phim Đang Chiếu</Link>
+            <h3
+              onClick={() => setActive("active")}
+              className={active === "active" ? "active-link" : ""}
+            >
+              Phim Đang Chiếu
+            </h3>
           </li>
           <li>
-            <Link to="/" onClick={()=> setActive("comingsoon")} className={active === "comingsoon" ? "active-link":""}>Phim Sắp Chiếu</Link>
+            <h3
+              onClick={() => setActive("comingsoon")}
+              className={active === "comingsoon" ? "active-link" : ""}
+            >
+              Phim Sắp Chiếu
+            </h3>
           </li>
-          <li> 
-          <Link to="/" onClick={()=> setActive("presale")} className={active === "presale" ? "active-link":""}>Vé Bán Trước</Link>
+          <li>
+            <h3
+              onClick={() => setActive("presaletickets")}
+              className={active === "presaletickets" ? "active-link" : ""}
+            >
+              Vé Bán Trước
+            </h3>
           </li>
         </ul>
       </nav>
-      {active === "active" && <MovieShowing movies={movies}/>}
+      {active === "active" && <MovieShowing  movies={movies}/>}
       {active === "comingsoon" && <UpComingMoive movies={movies}/>}
-      {active === "presale" && <PreSaleTickets movies={movies}/>}
+      {active === "presaletickets" && <PreSaleTickets movies={movies}/>}
     </div>
   )
 };

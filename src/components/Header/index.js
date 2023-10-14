@@ -131,7 +131,7 @@ const Header = ({ users, isLogin, setIsLogin }) => {
       </div>
       <div className="image--line">
         <img
-          src="https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/line-header1.png"
+          src="https://i.ibb.co/SJ9f706/line-header1.png"
           alt="header-line"
         />
       </div>
