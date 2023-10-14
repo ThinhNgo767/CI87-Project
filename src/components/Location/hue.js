@@ -1,18 +1,19 @@
-import React from "react";
-import THEATERS from "../../data/Theater";
 import "./style.css";
+import THEATERS from "../../data/Theater";
+
+import { Link } from "react-router-dom";
 
 function Hue() {
   const hue = THEATERS.filter((h) => h.location === "hue");
   return (
     <>
       {hue.map((local) => (
-        <li>
+        <li key={local.id}>
           <div className="info">
-            <a className="inside" style={{ display: "block" }} href="*">
+            <Link className="inside" style={{ display: "block" }} to="#">
               <h4 className="title-bhd">{local.name}</h4>
               <p>{local.address}</p>
-            </a>
+            </Link>
             <a
               className="btn--location"
               href="https://www.google.com/maps/search/"

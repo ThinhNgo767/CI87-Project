@@ -2,11 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import AboutUsSideBar from "../../components/AboutUsSideBar";
 import ListPromotion from "../../components/ListPromotion";
-import THEATERS from "../../data/Theater";
 
-function TheaterDetail() {
+const TheaterDetail =({theaters}) =>{
   const { slug } = useParams();
-  const theater = THEATERS.find((t) => t.href === slug);
+  const theater = theaters.find((t) => t.href === slug);
 
   if (!theater) {
     return <div>Rạp không tồn tại</div>;
@@ -23,7 +22,7 @@ function TheaterDetail() {
               <ul>
                 <li className="left">
                   <strong>Địa điểm:</strong>
-                  <span class="">{theater.address}</span>
+                  <span className="">{theater.address}</span>
                 </li>
                 <li className="left">
                   <strong>Số điện thoại:</strong>
@@ -91,7 +90,7 @@ function TheaterDetail() {
             </div>
           </div>
           <div className="about--us-sidebar">
-            <AboutUsSideBar />
+            <AboutUsSideBar theaters={theaters} />
           </div>
         </div>
       </div>

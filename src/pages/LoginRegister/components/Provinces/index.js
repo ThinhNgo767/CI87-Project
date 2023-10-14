@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const Provinces = () => {
+const Provinces = ({handleReceiveData}) => {
   const urlApi = "https://provinces.open-api.vn/api/";
   const [cities, setCities] = useState([]);
   const [districts, setDistricts] = useState([]);
@@ -46,20 +46,34 @@ const Provinces = () => {
     setSelectedDistrict("");
     setSelectedWard("");
     fetchDistricts(cityCode);
+    
   };
 
   const handleDistrictChange = (e) => {
     const districtCode = e.target.value;
     setSelectedDistrict(districtCode);
     setSelectedWard("");
+
     fetchWards(districtCode);
+
   };
 
   const handleWardChange = (e) => {
     const wardCode = e.target.value;
     setSelectedWard(wardCode);
+    
   };
-
+  
+  useEffect(()=>{
+    const handleGetProvinces=()=>{
+      const cityName = cities.find(c => c.code === Number(selectedCity))?.name;
+      const districtName = districts.find(d => d.code === Number(selectedDistrict))?.name;
+      const wardName = wards.find(w => w.code === Number(selectedWard))?.name;
+      handleReceiveData(cityName,districtName,wardName)
+    }
+    handleGetProvinces()
+  },[cities, districts, handleReceiveData, selectedCity, selectedDistrict, selectedWard, wards])
+  
 
 
   return (
@@ -91,7 +105,7 @@ const Provinces = () => {
             Chọn quận huyện
           </option>
           {districts.map((district) => (
-            <option key={district.code} value={district.code}>
+            <option key={district.code} value={district.code} >
               {district.name}
             </option>
           ))}
@@ -103,7 +117,7 @@ const Provinces = () => {
           Chọn phường xã
         </option>
         {wards.map((ward) => (
-          <option key={ward.code} value={ward.code}>
+          <option key={ward.code} value={ward.code} >
             {ward.name}
           </option>
         ))}

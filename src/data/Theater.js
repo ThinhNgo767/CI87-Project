@@ -17,20 +17,6 @@ const THEATERS = [
   },
   {
     id: 2,
-    img: "",
-    amount_like: "",
-    location: "hochiminh",
-    name: "BHD Star Bitexco",
-    href: "*",
-    phone: "",
-    email: "cskh@bhdstar.vn",
-    ticketPrice: "",
-    fTicketPrice: "",
-    phongChieu: "",
-    address: "",
-  },
-  {
-    id: 3,
     img: "https://www.bhdstar.vn/wp-content/uploads/2014/01/PH-470x639.jpg",
     amount_like: "782.536 Thích",
     location: "hochiminh",
@@ -47,7 +33,7 @@ const THEATERS = [
       "Tầng 4, TTTM Satra Phạm Hùng, C6/27 Phạm Hùng, Bình Chánh, TPHCM.",
   },
   {
-    id: 4,
+    id: 3,
     img: "https://www.bhdstar.vn/wp-content/uploads/2015/01/QUANG-TRUNG-470x639.jpg",
     amount_like: "773.135 Thích",
     location: "hochiminh",
@@ -63,7 +49,7 @@ const THEATERS = [
     address: "Tầng B1&B2, TTTM Vincom, số 190 Quang Trung, Gò Vấp, Tp.HCM",
   },
   {
-    id: 5,
+    id: 4,
     img: "https://www.bhdstar.vn/wp-content/uploads/2016/02/THAO-DIEN-CINEMA-470x639.jpg",
     amount_like: "571.029 Thích",
     location: "hochiminh",
@@ -79,7 +65,7 @@ const THEATERS = [
     address: "Tầng 5, TTTM Vincom Center, 159 Xa Lộ Hà Nội, Quận 2, TP.HCM",
   },
   {
-    id: 6,
+    id: 5,
     img: "https://www.bhdstar.vn/wp-content/uploads/2016/04/LVV-470x639.jpg",
     amount_like: "1.379.100 Thích",
     location: "hochiminh",
@@ -96,7 +82,7 @@ const THEATERS = [
       "Tầng 4, Vincom Plaza Lê Văn Việt, 50 Lê Văn Việt, P.Hiệp Phú, Quận 9, TP.HCM",
   },
   {
-    id: 7,
+    id: 6,
     img: "https://www.bhdstar.vn/wp-content/uploads/2016/07/PNT-CINEMA-470x639.jpg",
     amount_like: "2.132.441 Thích",
     location: "hanoi",
@@ -113,7 +99,7 @@ const THEATERS = [
     address: "Tầng 8 của TTTM Vincom, số 2 Phạm Ngọc Thạch, Đống Đa, Hà Nội",
   },
   {
-    id: 8,
+    id: 7,
     img: "https://www.bhdstar.vn/wp-content/uploads/2018/04/Cau-giay-copy-470x639.jpg",
     amount_like: "891.260 Thích",
     location: "hanoi",
@@ -129,7 +115,7 @@ const THEATERS = [
     address: "Tầng 8, TTTM Discovery - 302 Cầu Giấy , Hà Nội",
   },
   {
-    id: 9,
+    id: 8,
     img: "https://www.bhdstar.vn/wp-content/uploads/2019/12/GARDEN-470x639.jpg",
     amount_like: "387.350 Thích",
     location: "hanoi",
@@ -146,7 +132,7 @@ const THEATERS = [
       "Tầng 4 & 5, TTTM The Garden, khu đô thị The Manor, đường Mễ Trì, phường Mỹ Đình 1, quận Nam Từ Liêm, Hà Nội",
   },
   {
-    id: 10,
+    id: 9,
     img: "https://www.bhdstar.vn/wp-content/uploads/2018/04/HUE-copy-470x639.jpg",
     amount_like: "330.009 Thích",
     location: "hue",
@@ -163,7 +149,7 @@ const THEATERS = [
       "Vincom Huế, 50A Hùng Vương tổ 10, Phú Nhuận, Thành phố Huế, Thừa Thiên Huế",
   },
   {
-    id: 11,
+    id: 10,
     img: "https://www.bhdstar.vn/wp-content/uploads/2021/12/long-khanh-470x639.jpg",
     amount_like: "388.387 Thích",
     location: "longkhanh",

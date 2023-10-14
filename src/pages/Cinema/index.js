@@ -2,7 +2,15 @@ import Cinama from "../../components/Cinema";
 import ListMovie from "../../components/ListMovie";
 import "./style.css";
 
-const Cinema = () => {
+import { useEffect } from "react";
+
+const Cinema = ({movies ,theaters}) => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   return (
     <div className="warper-content">
       <div className="page--news cinema--background">
@@ -17,13 +25,13 @@ const Cinema = () => {
                 width: "1170px",
               }}
             >
-              <Cinama />
+              <Cinama theaters={theaters}/>
             </ul>
           </div>
         </div>
       </div>
       <div>
-        <ListMovie />
+        <ListMovie movies={movies} />
       </div>
     </div>
   );

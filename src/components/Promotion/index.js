@@ -1,6 +1,7 @@
 import React from "react";
 import Promotions from "../../data/Promotions";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -23,10 +24,11 @@ function Promotion() {
                 float: "left",
                 display: "block",
               }}
+              key={promo.id}
             >
-              <a href="*">
+              <Link to="*">
                 <img alt="none" src={promo.url} />
-              </a>
+              </Link>
             </div>
           ))}
         </Slider>

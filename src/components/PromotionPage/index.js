@@ -13,7 +13,7 @@ function PromotionInPage() {
   return (
     <>
       {promotionToShow.map((promo) => (
-        <li className="col-md-3 col-sm-6 col-xs-12">
+        <li key={promo.id} className="col-md-3 col-sm-6 col-xs-12">
           <div className="news--item">
             <a href="*">
               <img alt="cinema-img" width="270" height="152" src={promo.url} />

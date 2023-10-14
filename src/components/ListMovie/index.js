@@ -5,10 +5,12 @@ import MovieShowing from "../MovieShowing";
 import UpComingMoive from "../UpcomingMovie";
 import PreSaleTickets from "../PreSaleTickets";
 
-import "./style.css";
-const ListMovie = () => {
-  const [active, setActive] = useState("active");
 
+
+import "./style.css";
+const ListMovie = ({movies}) => {
+  const [active , setActive] = useState("active")
+  
   return (
     <div className="list-movie">
       <nav>
@@ -39,11 +41,11 @@ const ListMovie = () => {
           </li>
         </ul>
       </nav>
-      {active === "active" && <MovieShowing />}
-      {active === "comingsoon" && <UpComingMoive />}
-      {active === "presaletickets" && <PreSaleTickets />}
+      {active === "active" && <MovieShowing  movies={movies}/>}
+      {active === "comingsoon" && <UpComingMoive movies={movies}/>}
+      {active === "presaletickets" && <PreSaleTickets movies={movies}/>}
     </div>
-  );
+  )
 };
 
 export default ListMovie;

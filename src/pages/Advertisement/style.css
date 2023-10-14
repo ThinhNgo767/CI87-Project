@@ -151,6 +151,11 @@
   -webkit-border-radius: 6px;
 }
 
-.list-cinema li:hover a {
+.list-cinema li:hover p {
+  cursor: pointer;
   opacity: 0.8;
+}
+.list-cinema span.theater-title{
+  text-transform: uppercase;
+  font-weight: 600;
 }

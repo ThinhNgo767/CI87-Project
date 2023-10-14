@@ -6,7 +6,7 @@ import ListMovie from "../../components/ListMovie/index";
 import EventInPage from "../../components/EventInPage";
 import Loader from "../../components/Loader";
 
-const PromotionsEvents = () => {
+const PromotionsEvents = ({movies}) => {
   const [tabPromoActived, setTabPromoActived] = useState("tabPromo-1");
   const hanldeTabPromotion = (tabPromo) => {
     setTabPromoActived(tabPromo);
@@ -89,7 +89,7 @@ const PromotionsEvents = () => {
           </div>
         </div>
       </div>
-      <ListMovie />
+      <ListMovie movies={movies}/>
     </>
   );
 };

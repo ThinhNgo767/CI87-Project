@@ -1,6 +1,9 @@
 import BackTopTopButton from "../BackTopTopButton";
 import "./style.css";
 
+import { Link } from "react-router-dom";
+
+
 const Footer = () => {
   return (
     <>
@@ -17,15 +20,9 @@ const Footer = () => {
             <h3 className="title">về bhd star</h3>
             <div className="menu-intro">
               <ul>
-                <li>
-                  <a href="/he-thong-rap">hệ thống rạp</a>
-                </li>
-                <li>
-                  <a href="*">tuyển dụng</a>
-                </li>
-                <li>
-                  <a href="/lien-he">liên hệ</a>
-                </li>
+                <li><Link to="/he-thong-rap">hệ thống rạp</Link></li>
+                <li>tuyển dụng</li>
+                <li>liên hệ</li>
               </ul>
               <a href="*" style={{ position: "absolute", bottom: "136px" }}>
                 <img
@@ -40,7 +37,7 @@ const Footer = () => {
             <h3 className="title">quy định & điều khoản</h3>
             <div className="menu-rules">
               <ul>
-                <li>Quy định thành viên</li>
+                <li><Link to="/quy-dinh-thanh-vien">Quy định thành viên</Link></li>
                 <li>Điều khoản</li>
                 <li>Hướng dẫn đặt vé trực tuyến</li>
                 <li>Quy định và chính sách chung</li>

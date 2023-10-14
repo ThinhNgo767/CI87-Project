@@ -1,22 +1,25 @@
 import React from "react";
 import Slider from "react-slick";
 import { GiTicket } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import MOVIES from "../../data/Movies";
 import settings from "./SettingSlick";
 import "./style.css";
 
-const PreSaleTickets = () => {
-  const preSale = MOVIES.filter(
-    (movieShowing) => movieShowing.preSale === true
+const PreSaleTickets = ({movies}) => {
+  const navigate = useNavigate();
+  const preSale = movies.filter(
+    (presale) => presale.status === "presaletickets"
   );
   return (
     <Slider {...settings}>
       {preSale.map((movie) => (
-        <div className="card">
-          <div className="card-top">
+        <div className="card" key={movie.id}>
+          <div className="card-top" onClick={() => {
+                navigate(`/movie/${movie.id}`);
+              }}>
             <img src={movie.thumnail} alt={movie.title} />
             <p className="title-movie">{movie.title}</p>
           </div>
@@ -24,12 +27,15 @@ const PreSaleTickets = () => {
             <a
               href="*"
               className="btn-antd"
-              style={{
-                color: "#fff",
-                backgroundColor: "#45AB3C",
-                width: "100%",
-                height: "45px",
-                borderRadius: "3px",
+              type="primary"
+              size="lagre"
+              style={{ color: "#fff",
+              backgroundColor: "#45AB3C",
+              width: "100%",
+              height: "45px",
+              borderRadius: "3px"}}
+              onClick={() => {
+                navigate(`/movie/${movie.id}`);
               }}
             >
               <GiTicket />

@@ -1,22 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import THEATERS from "../../data/Theater";
 
 import "./style.css";
 
-function Cinama() {
-  const theatersToShow = THEATERS.filter(
-    (theater) =>
-      theater.id !== "" &&
-      theater.amount_like !== "" &&
-      theater.img !== "" &&
-      theater.name !== "" &&
-      theater.href !== ""
-  );
+function Cinama({theaters}) {
+  
   return (
     <>
-      {theatersToShow.map((cinema) => (
+      {theaters.map((cinema) => (
         <li key={cinema.id} className="col-md-3 col-sm-6 col-xs-12">
           <div className="news--item">
             <Link to={`/he-thong-rap/${cinema.href}`}>

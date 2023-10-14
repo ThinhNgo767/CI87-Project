@@ -1,19 +1,20 @@
-import React from "react";
-import THEATERS from "../../data/Theater";
 import "./style.css";
+import THEATERS from "../../data/Theater";
+
+import { Link } from "react-router-dom";
 
 function HoChiMinh() {
   const hochiminh = THEATERS.filter((hcm) => hcm.location === "hochiminh");
   return (
     <>
       {hochiminh.map((local) => (
-        <li>
+        <li key={local.id}>
           <div className="info">
-            <a className="inside" style={{ display: "block" }} href="*">
+            <Link className="inside" style={{ display: "block" }} to="#">
               <h4 className="title-bhd">{local.name}</h4>
               <p>{local.address}</p>
-            </a>
-            <a
+            </Link>
+            <Link
               className="btn--location"
               href="https://www.google.com/maps/search/"
             >
@@ -31,7 +32,7 @@ function HoChiMinh() {
                 </svg>
               </i>
               Xem
-            </a>
+            </Link>
           </div>
         </li>
       ))}

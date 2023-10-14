@@ -1,9 +1,9 @@
 import AboutUsSideBar from "../../components/AboutUsSideBar";
 import "./style.css";
 
-const Advertisement = () => {
+const Advertisement = ({theaters}) => {
   return (
-    <div className="warper-content">
+    <div className="warper-content advertisement">
       <div className="page--wrapper">
         <div className="container">
           <h1 className="about--us-title">DỊCH VỤ QUẢNG CÁO</h1>
@@ -61,7 +61,7 @@ const Advertisement = () => {
             </div>
           </div>
           <div className="about--us-sidebar">
-            <AboutUsSideBar />
+            <AboutUsSideBar theaters={theaters}/>
           </div>
         </div>
       </div>

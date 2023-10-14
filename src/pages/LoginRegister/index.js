@@ -1,111 +1,24 @@
 import "./style.css";
-import Provinces from "./components/Provinces";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import { handleLogin } from "../../utils/login";
 
-import { useState } from "react";
-import { Link , useNavigate} from "react-router-dom";
-import Cookies from "js-cookie";
+import { useEffect } from "react";
 
-const LoginRegister = ({ users}) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+const LoginRegister = ({ users,setUsers,isLogin, setIsLogin }) => {
   
-  const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-
-  const handleLogin = () => {
-    const expirationDateToken = new Date();
-    expirationDateToken.setTime(expirationDateToken.getTime() + 30 * 60 * 1000);
-    const options = { expires: expirationDateToken };
-
-    const isUser = users.find(
-      (user) => email === user.email && password === user.password
-    );
-    if (isUser) {
-      const encodedEmail = btoa(isUser.email);
-      Cookies.set("token", encodedEmail, options);
-      setEmail("")
-      setPassword("")
-      navigate("/")
-    }
-  };
+  
 
   return (
     <div className="login-register">
-      <div className="container-login">
-        <h2 className="login-title">đăng nhập</h2>
-        <form className="login">
-          <label htmlFor="login-email">
-            Email (*)
-            <input
-              type="email"
-              id="login-email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </label>
-          <label htmlFor="login-password">
-            Mật khẩu (*)
-            <input
-              type="password"
-              id="login-password"
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
-          <div className="login-button">
-            <button type="button" onClick={handleLogin}>
-              Đăng Nhập
-            </button>
-            <Link to="/reset-password">Quên mật khẩu</Link>
-          </div>
-        </form>
-      </div>
+      <Login users={users} isLogin={isLogin} setIsLogin={setIsLogin} handleLogin={handleLogin}/>
 
-      <div className="container-register">
-        <h2 className="register-title">đăng ký mới</h2>
-        <form className="register">
-          <label htmlFor="register-fistname">
-            Họ (*)
-            <input type="text" id="register-fistname" required />
-          </label>
-          <label htmlFor="register-lastname">
-            Tên Đệm (*)
-            <input type="text" id="register-lastname" required />
-          </label>
-          <label htmlFor="register-email">
-            Email (*)
-            <input type="email" id="register-email" required />
-          </label>
-          <label htmlFor="register-password">
-            Mật khẩu (*)
-            <input type="password" id="register-password" required />
-          </label>
-          <label htmlFor="register-reenter-password">
-            Nhập lại mật khẩu (*)
-            <input type="password" id="register-reenter-password" required />
-          </label>
-          <label htmlFor="register-phone">
-            Số điện thoại (*)
-            <input type="text" id="register-phone" required />
-          </label>
-          <label htmlFor="register-birthday">
-            Ngày sinh
-            <input type="date" id="register-birthday" />
-          </label>
-          <Provinces />
-          <label htmlFor="register-address">
-            Số nhà
-            <input type="text" id="register-address" />
-          </label>
-          <div className="acceps-regulation">
-            <label htmlFor="acceps">
-              <input type="checkbox" id="acceps" />
-              Tôi đã đọc, hiểu và đồng ý với các điều khoản
-            </label>
-          </div>
-          <button type="button">Đăng Ký</button>
-        </form>
-      </div>
+      <Register users={users} setUsers={setUsers} isLogin={isLogin} setIsLogin={setIsLogin}  />
     </div>
   );
 };

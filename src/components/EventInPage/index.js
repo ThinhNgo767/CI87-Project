@@ -15,7 +15,7 @@ function EventInPage() {
   return (
     <>
       {eventToShow.map((events) => (
-        <li className="col-md-3 col-sm-6 col-xs-12">
+        <li key={events.id} className="col-md-3 col-sm-6 col-xs-12">
           <div className="news--item">
             <a href="*">
               <img alt="cinema-img" width="221" height="330" src={events.url} />
