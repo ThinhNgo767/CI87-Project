@@ -16,6 +16,7 @@ import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import Contact from "./pages/Contact";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -51,6 +52,7 @@ const App = () => {
         <Route path="/he-thong-rap/:slug" element={<TheaterDetail />} />
         <Route path="/khuyen-mai-su-kien" element={<PromotionsEvents />} />
         <Route path="/quang-cao" element={<Advertisement />} />
+        <Route path="/lien-he" element={<Contact />} />
         <Route path="/ve-chung-toi" element={<Abouts />} />
         <Route path="/dang-ky" element={<LoginRegister users={users} />} />
         <Route path="/tai-khoan" element={<Infomation />} />

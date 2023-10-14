@@ -1,3 +1,4 @@
+import AboutUsSideBar from "../../components/AboutUsSideBar";
 import "./style.css";
 
 const Advertisement = () => {
@@ -60,68 +61,7 @@ const Advertisement = () => {
             </div>
           </div>
           <div className="about--us-sidebar">
-            <ul class="list-cinema">
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR LONG KHÁNH</span>
-                </a>
-              </li>
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR THE GARDEN</span>
-                </a>
-              </li>
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR DISCOVERY</span>
-                </a>
-              </li>
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR HUẾ</span>
-                </a>
-              </li>
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR PHẠM NGỌC THẠCH</span>
-                </a>
-              </li>
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR LÊ VĂN VIỆT</span>
-                </a>
-              </li>
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR THẢO ĐIỀN</span>
-                </a>
-              </li>
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR QUANG TRUNG</span>
-                </a>
-              </li>
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR PHẠM HÙNG</span>
-                </a>
-              </li>
-              <li>
-                <a class="item--cinema" href="*">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>BHD STAR 3/2</span>
-                </a>
-              </li>
-            </ul>
+            <AboutUsSideBar />
           </div>
         </div>
       </div>
