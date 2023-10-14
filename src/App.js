@@ -1,6 +1,6 @@
 import "./App.css";
 import { fetchUser } from "./api/users";
-import {fetchMovies} from "./api/movies"
+import { fetchMovies } from "./api/movies";
 import { useAuth } from "./hooks/useAuth";
 import THEATERS from "./data/Theater";
 import Header from "./components/Header";
@@ -27,7 +27,7 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [users, setUsers] = useState([]);
-  const {isLogin, setIsLogin} = useAuth();
+  const { isLogin, setIsLogin } = useAuth();
 
   useEffect(() => {
     const fetchDataUserFromAPI = async () => {
@@ -50,7 +50,6 @@ const App = () => {
         const resultMovies = await fetchMovies();
         if (resultMovies.length > 0) {
           setMovies(resultMovies);
-          
         }
       } catch (error) {
         return -1;
@@ -60,19 +59,34 @@ const App = () => {
     fetchDataMoviesFromAPI();
   }, []);
 
-
   return (
     <div className="App">
       <Header users={users} isLogin={isLogin} setIsLogin={setIsLogin} />
       <Routes>
-      <Route path="/" element={<Home movies={movies}/>} />
-        <Route path="/lich-theo-chieu-phim" element={<ShowTimes movies={movies}/>} />
-        <Route path="/he-thong-rap" exact element={<Cinema movies={movies} theaters={THEATERS} />} />
-        <Route path="/he-thong-rap/:slug" element={<TheaterDetail theaters={THEATERS}/>} />
-        <Route path="/khuyen-mai-su-kien" element={<PromotionsEvents movies={movies} />} />
-        <Route path="/quang-cao" element={<Advertisement theaters={THEATERS}/>} />
+        <Route path="/" element={<Home movies={movies} />} />
+        <Route
+          path="/lich-theo-chieu-phim"
+          element={<ShowTimes movies={movies} />}
+        />
+        <Route
+          path="/he-thong-rap"
+          exact
+          element={<Cinema movies={movies} theaters={THEATERS} />}
+        />
+        <Route
+          path="/he-thong-rap/:slug"
+          element={<TheaterDetail theaters={THEATERS} />}
+        />
+        <Route
+          path="/khuyen-mai-su-kien"
+          element={<PromotionsEvents movies={movies} />}
+        />
+        <Route
+          path="/quang-cao"
+          element={<Advertisement theaters={THEATERS} />}
+        />
         <Route path="/lien-he" element={<Contact />} />
-        <Route path="/ve-chung-toi" element={<Abouts theaters={THEATERS}/>} />
+        <Route path="/ve-chung-toi" element={<Abouts theaters={THEATERS} />} />
 
         <Route
           path="/dang-ky"
@@ -100,9 +114,12 @@ const App = () => {
             )
           }
         />
-        <Route path="/quy-dinh-thanh-vien" element={<RegulationMember/>}/>
-        <Route path="/dieu-khoan" element={<Rules theaters={THEATERS}/>}/>
-        <Route path="/bao-mat-thong-tin" element={<SecurityPersonal theaters={THEATERS}/>}/>
+        <Route path="/quy-dinh-thanh-vien" element={<RegulationMember />} />
+        <Route path="/dieu-khoan" element={<Rules theaters={THEATERS} />} />
+        <Route
+          path="/bao-mat-thong-tin"
+          element={<SecurityPersonal theaters={THEATERS} />}
+        />
         <Route path="/movie/:movieId" element={<Movie movies={movies} />} />
         <Route path="*" element={<Error />} />
       </Routes>

@@ -3,14 +3,12 @@ import SideLocationCinema from "../../components/SideLocationCinema";
 
 import { useEffect } from "react";
 import { FaFacebookF } from "react-icons/fa6";
-import { FacebookShareButton } from "react-share";
 
 const SecurityPersonal = ({ theaters }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const url = window.location.href
 
   return (
     <div className="security-personal">
@@ -148,10 +146,10 @@ const SecurityPersonal = ({ theaters }) => {
                 <i className="fa fa-tags"></i>
               </div>
               <div className="button--share">
-                <FacebookShareButton url={url} className="btn--fb-share">
+                <button className="btn--fb-share">
                   <FaFacebookF />
                   Chia sẻ
-                </FacebookShareButton>
+                </button>
               </div>
             </div>
           </div>
