@@ -23,3 +23,15 @@ button.btn--fb-share{
   place-items: center;
   justify-content: space-evenly;
 }
+a.btn--fb-share{
+  background: #3b5998 ; 
+  text-decoration: none;
+  min-width: 5rem;
+  min-height: 2rem;
+  border: none ;
+  border-radius: 0.25rem;
+  color: #fff ;
+  display: flex;
+  place-items: center;
+  justify-content: space-evenly;
+}

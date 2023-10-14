@@ -1,9 +1,12 @@
 import SideLocationCinema from "../../components/SideLocationCinema";
 import "./style.css";
 
+import { Link } from "react-router-dom";
 import { FaFacebookF } from "react-icons/fa6";
 
 const Abouts = ({theaters}) => {
+  const shareUrl = "https://www.facebook.com/sharer/sharer.php?u=https://ci87-bhdstar.netlify.app/"
+
 
   return (
     <div className="warper-content">
@@ -81,10 +84,10 @@ const Abouts = ({theaters}) => {
               <i className="fa fa-tags"></i>
             </div>
             <div className="button--share">
-            <button className="btn--fb-share">
+            <Link to={shareUrl} target="_blank" className="btn--fb-share">
                   <FaFacebookF />
                   Chia sẻ
-                </button>
+                </Link>
             </div>
           </div>
           <div className="about--us-sidebar">
@@ -93,6 +96,7 @@ const Abouts = ({theaters}) => {
           
         </div>
       </div>
+     
     </div>
   );
 };
