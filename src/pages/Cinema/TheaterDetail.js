@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import AboutUsSideBar from "../../components/AboutUsSideBar";
+import SideLocationCinema from "../../components/SideLocationCinema";
 import ListPromotion from "../../components/ListPromotion";
 
 const TheaterDetail =({theaters}) =>{
@@ -90,7 +90,7 @@ const TheaterDetail =({theaters}) =>{
             </div>
           </div>
           <div className="about--us-sidebar">
-            <AboutUsSideBar theaters={theaters} />
+            <SideLocationCinema theaters={theaters} />
           </div>
         </div>
       </div>

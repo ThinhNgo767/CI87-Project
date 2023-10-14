@@ -4,15 +4,15 @@ import ListPromotion from "../ListPromotion";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-const Regulation = () => {
+const RegulationMember = () => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="regulation">
-      <div className="regulation-content">
+    <div className="regulation-member">
+      <div className="regulation-content-member">
       <h3>1. cách thức đăng ký tài khoản</h3>
       <p>
         Khách hàng có thể đăng ký tài khoản thành viên miễn phí tại{" "}
@@ -147,4 +147,4 @@ const Regulation = () => {
   );
 };
 
-export default Regulation;
+export default RegulationMember;

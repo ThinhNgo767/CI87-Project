@@ -1,11 +1,12 @@
-import React from "react";
+import "./style.css"
 import { useNavigate } from "react-router-dom";
 
-const AboutUsSideBar = ({ theaters }) => {
+const SideLocationCinema = ({ theaters }) => {
   const navigate = useNavigate();
 
   return (
-    <ul className="list-cinema">
+    
+<ul className=" list-cinema">
       {theaters.map((theater) => (
         <li
           key={theater.id}
@@ -20,7 +21,9 @@ const AboutUsSideBar = ({ theaters }) => {
         </li>
       ))}
     </ul>
+    
+    
   );
 };
 
-export default AboutUsSideBar;
+export default SideLocationCinema;

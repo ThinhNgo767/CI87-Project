@@ -1,5 +1,5 @@
 import React from "react";
-import AboutUsSideBar from "../../components/AboutUsSideBar";
+import SideLocationCinema from "../../components/SideLocationCinema";
 
 function Contact() {
   return (
@@ -50,7 +50,7 @@ function Contact() {
             </div>
           </div>
           <div className="about--us-sidebar">
-            <AboutUsSideBar />
+            <SideLocationCinema />
           </div>
         </div>
       </div>

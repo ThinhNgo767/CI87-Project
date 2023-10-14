@@ -13,7 +13,9 @@ import PromotionsEvents from "./pages/PromotionsEvents";
 import Movie from "./pages/Movie";
 import Abouts from "./pages/Abouts";
 import LoginRegister from "./pages/LoginRegister";
-import Regulation from "./components/Regulation";
+import RegulationMember from "./components/RegulationMember";
+import Rules from "./pages/Rules";
+import SecurityPersonal from "./pages/SecurityPersonal";
 import Account from "./pages/Account";
 import Error from "./pages/Error";
 import Contact from "./pages/Contact";
@@ -98,7 +100,9 @@ const App = () => {
             )
           }
         />
-        <Route path="/quy-dinh-thanh-vien" element={<Regulation/>}/>
+        <Route path="/quy-dinh-thanh-vien" element={<RegulationMember/>}/>
+        <Route path="/dieu-khoan" element={<Rules theaters={THEATERS}/>}/>
+        <Route path="/bao-mat-thong-tin" element={<SecurityPersonal theaters={THEATERS}/>}/>
         <Route path="/movie/:movieId" element={<Movie movies={movies} />} />
         <Route path="*" element={<Error />} />
       </Routes>

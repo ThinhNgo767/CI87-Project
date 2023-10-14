@@ -1,6 +1,6 @@
 import "./style.css"
 import Infomation from './components/Infomation';
-import Regulation from "../../components/Regulation";
+import Regulation from "../../components/RegulationMember";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";

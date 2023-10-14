@@ -21,16 +21,16 @@ const Footer = () => {
             <div className="menu-intro">
               <ul>
                 <li><Link to="/he-thong-rap">hệ thống rạp</Link></li>
-                <li>tuyển dụng</li>
-                <li>liên hệ</li>
+                <li><Link to="/lien-he">liên hệ</Link></li>
+                <li><Link to="/quang-cao">quảng cáo</Link></li>
               </ul>
-              <a href="*" style={{ position: "absolute", bottom: "136px" }}>
+              <Link to="http://online.gov.vn/Home/WebDetails/46605" target="_blank">
                 <img
                   alt="bocongthuong"
                   style={{ width: "150px" }}
                   src="https://www.bhdstar.vn/wp-content/uploads/2020/02/dathongbao-1.png"
                 />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="footer_row-right">
@@ -38,10 +38,10 @@ const Footer = () => {
             <div className="menu-rules">
               <ul>
                 <li><Link to="/quy-dinh-thanh-vien">Quy định thành viên</Link></li>
-                <li>Điều khoản</li>
-                <li>Hướng dẫn đặt vé trực tuyến</li>
-                <li>Quy định và chính sách chung</li>
-                <li>Chính sách bảo vệ thông tin cá nhân của người tiêu dùng</li>
+                <li><Link to="/dieu-khoan">Điều khoản</Link></li>
+               
+                
+                <li><Link to="/bao-mat-thong-tin">Chính sách bảo vệ thông tin cá nhân của người tiêu dùng</Link></li>
               </ul>
             </div>
           </div>

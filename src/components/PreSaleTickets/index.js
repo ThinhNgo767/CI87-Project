@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import settings from "./SettingSlick";
 import "./style.css";
 
-const PreSaleTickets = ({movies}) => {
+const PreSaleTickets = ({ movies }) => {
   const navigate = useNavigate();
   const preSale = movies.filter(
     (presale) => presale.status === "presaletickets"
@@ -17,30 +17,27 @@ const PreSaleTickets = ({movies}) => {
     <Slider {...settings}>
       {preSale.map((movie) => (
         <div className="card" key={movie.id}>
-          <div className="card-top" onClick={() => {
-                navigate(`/movie/${movie.id}`);
-              }}>
+          <div
+            className="card-top"
+            onClick={() => {
+              navigate(`/movie/${movie.id}`);
+            }}
+          >
             <img src={movie.thumnail} alt={movie.title} />
             <p className="title-movie">{movie.title}</p>
           </div>
           <div className="card-bottom">
-            <a
-              href="*"
+            <button
               className="btn-antd"
               type="primary"
               size="lagre"
-              style={{ color: "#fff",
-              backgroundColor: "#45AB3C",
-              width: "100%",
-              height: "45px",
-              borderRadius: "3px"}}
               onClick={() => {
                 navigate(`/movie/${movie.id}`);
               }}
             >
               <GiTicket />
               Mua vé
-            </a>
+            </button>
           </div>
         </div>
       ))}

@@ -27,23 +27,17 @@ const MovieShowing = ({ movies }) => {
             <p className="title-movie">{movie.title}</p>
           </div>
           <div className="card-bottom">
-            <a
-              href="*"
+            <button
+              to="#"
               className="btn-antd"
-              style={{
-                color: "#fff",
-                backgroundColor: "#45AB3C",
-                width: "100%",
-                height: "45px",
-                borderRadius: "3px",
-              }}
+              
               onClick={() => {
                 navigate(`/movie/${movie.id}`);
               }}
             >
               <GiTicket />
               Mua vé
-            </a>
+            </button>
           </div>
         </div>
       ))}

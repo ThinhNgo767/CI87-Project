@@ -1,4 +1,4 @@
-import AboutUsSideBar from "../../components/AboutUsSideBar";
+import SideLocationCinema from "../../components/SideLocationCinema";
 import "./style.css";
 
 const Advertisement = ({theaters}) => {
@@ -61,7 +61,7 @@ const Advertisement = ({theaters}) => {
             </div>
           </div>
           <div className="about--us-sidebar">
-            <AboutUsSideBar theaters={theaters}/>
+            <SideLocationCinema theaters={theaters}/>
           </div>
         </div>
       </div>

@@ -1,7 +1,13 @@
-import AboutUsSideBar from "../../components/AboutUsSideBar";
+import SideLocationCinema from "../../components/SideLocationCinema";
 import "./style.css";
 
+import { FaFacebookF } from "react-icons/fa6";
+import { FacebookShareButton } from 'react-share';
+
 const Abouts = ({theaters}) => {
+
+  const url ="https://ci87-bhdstar.netlify.app/"
+
   return (
     <div className="warper-content">
       <div className="page--wrapper">
@@ -78,14 +84,14 @@ const Abouts = ({theaters}) => {
               <i className="fa fa-tags"></i>
             </div>
             <div className="button--share">
-              <a href="*" className="btn--fb-share">
-                <i className="fa fa-facebook"></i>
-                Chia sẻ
-              </a>
+            <FacebookShareButton url={url} className="btn--fb-share">
+                  <FaFacebookF />
+                  Chia sẻ
+                </FacebookShareButton>
             </div>
           </div>
           <div className="about--us-sidebar">
-            <AboutUsSideBar  theaters={theaters}/>
+            <SideLocationCinema  theaters={theaters}/>
           </div>
           
         </div>

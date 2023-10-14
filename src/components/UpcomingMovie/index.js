@@ -23,23 +23,19 @@ const UpComingMoive = ({movies}) => {
             <p className="title-movie">{movie.title}</p>
           </div>
           <div className="card-bottom">
-            <a
-              href="*"
+            <button
+              
               className="btn-antd"
               type="primary"
               size="lagre"
-              style={{ color: "#fff",
-              backgroundColor: "#45AB3C",
-              width: "100%",
-              height: "45px",
-              borderRadius: "3px", }}
+  
               onClick={() => {
                 navigate(`/movie/${movie.id}`);
               }}
             >
               <GiTicket />
               Mua vé
-            </a>
+            </button>
           </div>
         </div>
       ))}

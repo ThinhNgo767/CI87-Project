@@ -13,6 +13,9 @@
   padding: 5rem 5rem 5rem 7rem;
   
 }
+.movie h2{
+  font-size: 1.5rem;
+}
 .movie h2,.movie p span.classify{
     text-transform: uppercase;
 }
