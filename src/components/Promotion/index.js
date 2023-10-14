@@ -24,7 +24,7 @@ function Promotion() {
                 float: "left",
                 display: "block",
               }}
-              key={promo.id}
+             
             >
               <Link to="*">
                 <img alt="none" src={promo.url} />
