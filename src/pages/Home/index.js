@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 
 import ListMovie from "../../components/ListMovie";
 import CardsMember from "../../components/CardsMember";
@@ -8,6 +9,10 @@ import ListPromotion from "../../components/ListPromotion";
 import "./style.css";
 
 const Home = ({movies}) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="home-page">

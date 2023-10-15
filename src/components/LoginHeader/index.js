@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { useInput } from "../../hooks/useInput";
-import { handleLogin } from "../../utils/login";
+import { alertSuccess } from "../../utils/alert";
 
-const LoginHeader = ({ users, isLogin, setIsLogin }) => {
+const LoginHeader = ({ handleLogin }) => {
   const [openLogin, setOpenLogin] = useState(false);
   const email = useInput();
   const password = useInput();
@@ -35,13 +35,15 @@ const LoginHeader = ({ users, isLogin, setIsLogin }) => {
     setOpenLogin(false);
   };
 
-  const userLogin = () => {
-    const login = handleLogin(users, email.value, password.value);
-
-    if (login) {
-      setIsLogin(true);
-      navigate("/tai-khoan")
-    }
+  const handleLoginHeader = () => {
+   const login = handleLogin(email.value, password.value);
+   if(login){
+    alertSuccess("Đăng nhập thành công");
+    setOpenLogin(false);
+    email.setValue("")
+    password.setValue("")
+   }
+    
   };
 
   return (
@@ -55,35 +57,37 @@ const LoginHeader = ({ users, isLogin, setIsLogin }) => {
           >
             ĐĂNG NHẬP
           </button>
+          <div className="modal-header-login">
+            <form className="from-login">
+              <input
+                type="text"
+                className="email-login"
+                value={email.value}
+                onChange={email.onChange}
+                placeholder="Email"
+                autoComplete="username"
+                required
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password.value}
+                onChange={password.onChange}
+                autoComplete="current-password"
+                required
+              />
+              <div className="form-login-item">
+                <button
+                  type="submit"
+                  className="form-button-login header_button--style"
+                  onClick={handleLoginHeader}
+                >
+                  ĐĂNG NHẬP
+                </button>
+                <Link to="/reset-password">Quên mật khẩu</Link>
+              </div>
+            </form>
 
-          <form className="from-login">
-            <input
-              type="text"
-              className="email-login"
-              value={email.value}
-              onChange={email.onChange}
-              placeholder="Email"
-              autoComplete="username"
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password.value}
-              onChange={password.onChange}
-              autoComplete="current-password"
-              required
-            />
-            <div className="form-login-item">
-              <button
-                type="submit"
-                onClick={userLogin}
-                className="form-button-login header_button--style"
-              >
-                ĐĂNG NHẬP
-              </button>
-              <Link to="/reset-password">Quên mật khẩu</Link>
-            </div>
             <button
               type="button"
               onClick={handleSignUpClick}
@@ -91,7 +95,7 @@ const LoginHeader = ({ users, isLogin, setIsLogin }) => {
             >
               ĐĂNG KÝ THÀNH VIÊN
             </button>
-          </form>
+          </div>
         </>
       ) : (
         <>

@@ -3,18 +3,13 @@ import { updatetUser } from "../../../../api/users";
 import { useInput } from "../../../../hooks/useInput";
 
 import React, { useState } from "react";
-import Cookies from "js-cookie";
 
-
-
-
-const InfomationBottom = ({ users, isLogin }) => {
+const InfomationBottom = ({ user}) => {
   const [editPassword, setEditPassword] = useState(false);
 const newPass =useInput()
 
-  const token = atob(Cookies.get("token") ?? "");
-  const user = users.find((user) => user.email === token) ?? [];
   const {
+    id,
     email,
     password,
     fistName,
@@ -32,7 +27,7 @@ const newPass =useInput()
     password : newPass.value
   }
   try{
-    await updatetUser(user.id,newPassword)
+    await updatetUser(id,newPassword)
     setEditPassword(!editPassword)
   }catch{
     console.error()

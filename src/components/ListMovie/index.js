@@ -1,13 +1,11 @@
 import React from "react";
 import { useState } from "react";
 
+import "./style.css";
 import MovieShowing from "../MovieShowing";
 import UpComingMoive from "../UpcomingMovie";
 import PreSaleTickets from "../PreSaleTickets";
 
-
-
-import "./style.css";
 const ListMovie = ({movies}) => {
   const [active , setActive] = useState("active")
   

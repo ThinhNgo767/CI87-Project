@@ -5,16 +5,13 @@ import { updatetUser } from "../../../../api/users";
 import React, { useState } from "react";
 import axios from "axios";
 import { AiFillCamera } from "react-icons/ai";
-import Cookies from "js-cookie";
 
-const InfomationTop = ({ users ,isLogin}) => {
+const InfomationTop = ({ user ,isLogin}) => {
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [hovered, setHovered] = useState(false);
 
-  const token = atob(Cookies.get("token") ?? "");
-  const user = users.find((user) => user.email === token) ?? [];
-  const{avatar,lastName,fistName,email} = user
+  const{id,avatar,lastName,fistName,email} = user
 
   const API_URL =
     "https://api.imgbb.com/1/upload?expiration=600&key=23ab0c87fe03eacea40da570cc60dc26";
@@ -35,7 +32,7 @@ const InfomationTop = ({ users ,isLogin}) => {
         avatar: imageUrl,
       };
 
-      updatetUser(user.id, avatarLink);
+      updatetUser(id, avatarLink);
     } catch (error) {
       console.error("Error uploading image:", error);
     }

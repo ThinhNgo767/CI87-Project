@@ -113,8 +113,8 @@ button.header_button--toggle {
   padding-bottom: 0.75rem;
 }
 .header_item--right {
-  width: 30%;
-  margin-right: 2.5rem;
+  min-width: 30%;
+  padding-right: 2rem;
   padding-bottom: 0.75rem;
 }
 .header_item {
@@ -130,7 +130,6 @@ button.header_button--toggle {
   transform: translate(-50%, 0%);
   z-index: 2;
   width: 100vw;
-  
 }
 .header_button_social {
   border: 2px solid #797e83;
@@ -152,15 +151,19 @@ button.header_button--toggle {
 .login_header {
   position: relative;
 }
+.modal-header-login {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: -2.5rem;
+  top: 3.5rem;
+  background-color: #121825;
+}
 .from-login {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: #121825;
-  position: absolute;
-  padding: 1rem 4rem 3rem 4rem;
-  right: -2.5rem;
-  top: 3.5rem;
+  padding: 1rem 2rem ;
 }
 .from-login input {
   width: 20rem;
@@ -216,4 +219,20 @@ a.login-name {
 }
 a.log-out {
   color: #fff;
+}
+.header-loading {
+  display: flex;
+  align-items: center;
+
+  padding-bottom: 1rem;
+  padding-left: 7rem;
+  gap: 2rem;
+  min-width: 30%;
+}
+.header-loading p {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #89c441;
 }

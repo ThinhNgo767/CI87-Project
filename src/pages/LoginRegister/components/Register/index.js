@@ -9,18 +9,20 @@ import {
   validateFomatPassword,
   validateFomatEmail,
   valiDuplePass,
-  validatePhone
+  validatePhone,
 } from "../../../../utils/validate";
 import { creatUser } from "../../../../api/users";
 
-import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import Cookies from "js-cookie";
 import axios from "axios";
 
-const Register = ({ setUsers, users, setIsLogin }) => {
+const Register = ({ setUsers, handleLogin ,setLoading}) => {
   const [checked, setChecked] = useState(false);
   const [isValid, setIsValid] = useState(true);
+  const [succeed,setSucceed] =useState(false)
   const fistName = useInput();
   const lastName = useInput();
   const email = useInput();
@@ -35,6 +37,18 @@ const Register = ({ setUsers, users, setIsLogin }) => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const LoginCompletedRegister = () => {
+      if (succeed) {
+        const login = handleLogin(email.value, password.value);
+        if (login) {
+          navigate("/");
+        }
+      }
+    };
+    LoginCompletedRegister();
+  }, [succeed,email.value, password.value, handleLogin, navigate]);
+
   const handleReceiveData = (city, district, ward) => {
     cityProvince.setValue(city);
     districts.setValue(district);
@@ -48,7 +62,7 @@ const Register = ({ setUsers, users, setIsLogin }) => {
       password.value,
       reEnterPassword.value
     );
-    const validateNumberPhone = validatePhone(phone.value)
+    const validateNumberPhone = validatePhone(phone.value);
 
     if (!validatePassword) {
       setIsValid(!isValid);
@@ -68,27 +82,27 @@ const Register = ({ setUsers, users, setIsLogin }) => {
       setIsValid(!isValid);
       alertError("Vui lòng đồng ý với các điều khoản!");
       return;
-    } else if(!validateNumberPhone){
+    } else if (!validateNumberPhone) {
       setIsValid(!isValid);
       alertError("Số điện thoại không đúng định dạng!");
       return;
-    }else {
+    } else {
       setIsValid(true);
     }
     return isValid;
   };
 
   const handleRegister = async (e) => {
+    e.preventDefault();
     const API_URL = "https://65219433a4199548356d628d.mockapi.io/";
     try {
-      e.preventDefault();
-
       const checkValidate = validate();
 
-      if (!checkValidate) {
-        return;
-      } else {
-        axios.get(`${API_URL}/user`).then((response) => {
+      if (!checkValidate) return;
+
+      await axios
+        .get(`${API_URL}/user`)
+        .then((response) => {
           const users = response.data;
           const checked = users.every((user) => user.email !== email.value);
 
@@ -107,28 +121,31 @@ const Register = ({ setUsers, users, setIsLogin }) => {
                 wards: wards.value,
               },
               address: address.value,
+              code: uuidv4(),
             };
-            
+
             creatUser(newUser);
-            const token = btoa(email.value);
-            Cookies.set("token", token ,{
-              expires: new Date(Date.now() + 30 * 60 * 1000)
+
+            Cookies.set("token", newUser.code, {
+              expires: new Date(Date.now() + 30 * 60 * 1000),
             });
-            
+
             setUsers((prve) => {
               const users = [...prve, newUser];
 
               return users;
             });
-
-            navigate("/tai-khoan");
-            setIsLogin(true);
+            setSucceed(true)
+            setLoading(true)
             alertSuccess("Đăng kí thành công");
+            
           } else {
             alertError("Email đã tồn tại");
           }
+        })
+        .catch(() => {
+          return;
         });
-      }
     } catch (error) {
       alertWanning("error");
     }

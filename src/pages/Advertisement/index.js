@@ -7,6 +7,8 @@ import "./style.css";
 const Advertisement = ({theaters}) => {
   const shareUrl = "https://www.facebook.com/sharer/sharer.php?u=https://ci87-bhdstar.netlify.app/"
 
+
+
   return (
     <div className="warper-content advertisement">
       <div className="page--wrapper">

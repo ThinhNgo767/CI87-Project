@@ -1,11 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams ,Link} from "react-router-dom";
+import { FaFacebookF } from "react-icons/fa6";
+
 import SideLocationCinema from "../../components/SideLocationCinema";
 import ListPromotion from "../../components/ListPromotion";
 
 const TheaterDetail =({theaters}) =>{
   const { slug } = useParams();
   const theater = theaters.find((t) => t.href === slug);
+  const shareUrl = "https://www.facebook.com/sharer/sharer.php?u=https://ci87-bhdstar.netlify.app/"
 
   if (!theater) {
     return <div>Rạp không tồn tại</div>;
@@ -83,10 +86,10 @@ const TheaterDetail =({theaters}) =>{
               <i className="fa fa-tags"></i>
             </div>
             <div className="button--share">
-              <a href="*" className="btn--fb-share">
-                <i className="fa fa-facebook"></i>
+            <Link to={shareUrl} target="_blank" className="btn--fb-share">
+                <FaFacebookF/>
                 Chia sẻ
-              </a>
+              </Link>
             </div>
           </div>
           <div className="about--us-sidebar">

@@ -14,7 +14,7 @@ export const alertError =(text) =>{
         icon: "error",
         title: text,
         showConfirmButton: false,
-        timer: 2000,
+        timer: 1500,
         timerProgressBar: true,
       });
 }
@@ -30,7 +30,7 @@ export const alertSuccess =(text) =>{
         icon: "success",
         title: text,
         showConfirmButton: false,
-        timer: 2000,
+        timer: 1500,
         timerProgressBar: true,
       });
 }
@@ -46,7 +46,7 @@ export const alertWanning =(text) =>{
         icon: "warning",
         title: text,
         showConfirmButton: false,
-        timer: 2000,
+        timer: 1500,
         timerProgressBar: true,
       });
 }

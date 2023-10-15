@@ -1,7 +1,9 @@
 import "./App.css";
 import { fetchUser } from "./api/users";
 import { fetchMovies } from "./api/movies";
+import { updatetUser } from "./api/users";
 import { useAuth } from "./hooks/useAuth";
+import { alertError } from "./utils/alert";
 import THEATERS from "./data/Theater";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -21,28 +23,37 @@ import Error from "./pages/Error";
 import Contact from "./pages/Contact";
 import TheaterDetail from "./pages/Cinema/TheaterDetail";
 
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { v4 as uuidv4 } from 'uuid';
+import Cookies from "js-cookie";
+
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [users, setUsers] = useState([]);
+  const [usersChange , setUsersChange] = useState(false)
+  const [loading , setLoading] =useState(false)
   const { isLogin, setIsLogin } = useAuth();
+  
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDataUserFromAPI = async () => {
       try {
-        const resultUser = await fetchUser();
-        if (resultUser.length > 0) {
-          setUsers(resultUser);
+        const resultUsers = await fetchUser();
+        if (resultUsers.length > 0) {
+          setUsers(resultUsers);
         }
+
       } catch (error) {
-        return -1;
+        console.error('Error fetching user data:', error);
       }
     };
 
     fetchDataUserFromAPI();
-  }, []);
+  }, [usersChange]);
 
   useEffect(() => {
     const fetchDataMoviesFromAPI = async () => {
@@ -52,16 +63,49 @@ const App = () => {
           setMovies(resultMovies);
         }
       } catch (error) {
-        return -1;
+        console.error('Error fetching user data:', error);
       }
     };
 
     fetchDataMoviesFromAPI();
   }, []);
 
+  const handleLogin = async (email, password) => {
+    const userLogin = users.find(
+      (user) => email === user.email && password === user.password
+    );
+    const newCode = {
+      code : uuidv4()
+    }
+    if (!!userLogin) {
+      setLoading(true)
+      await updatetUser(userLogin.id ,newCode)
+      setUsersChange(prev => !prev);
+      Cookies.set("token", newCode.code, {
+        expires: new Date(Date.now() + 30 * 60 * 1000),
+      });
+      navigate("/");
+    } else {
+      alertError("Sai email hoặc password");
+      return;
+    }
+  };
+
+  const handleLogout = () => {
+    setIsLogin(false);
+    Cookies.remove("token");
+  };
+
   return (
     <div className="App">
-      <Header users={users} isLogin={isLogin} setIsLogin={setIsLogin} />
+      <Header
+        users={users}
+        isLogin={isLogin}
+        handleLogin={handleLogin}
+        handleLogout={handleLogout}
+        loading={loading}
+        setLoading={setLoading}
+      />
       <Routes>
         <Route path="/" element={<Home movies={movies} />} />
         <Route
@@ -91,28 +135,18 @@ const App = () => {
         <Route
           path="/dang-ky"
           element={
-            isLogin ? (
-              <Navigate to="/tai-khoan" replace={true} />
-            ) : (
-              <LoginRegister
-                users={users}
-                setUsers={setUsers}
-                isLogin={isLogin}
-                setIsLogin={setIsLogin}
-              />
-            )
+            <LoginRegister
+              setUsers={setUsers}
+          
+              handleLogin={handleLogin}
+              setLoading={setLoading}
+            />
           }
         />
 
         <Route
           path="/tai-khoan"
-          element={
-            isLogin ? (
-              <Account users={users} isLogin={isLogin} />
-            ) : (
-              <Navigate to="/dang-ky" replace={true} />
-            )
-          }
+          element={<Account users={users} isLogin={isLogin} />}
         />
         <Route path="/quy-dinh-thanh-vien" element={<RegulationMember />} />
         <Route path="/dieu-khoan" element={<Rules theaters={THEATERS} />} />

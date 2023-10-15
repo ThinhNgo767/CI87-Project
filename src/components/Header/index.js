@@ -6,14 +6,13 @@ import { FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { PulseLoader } from "react-spinners";
 
-const Header = ({ users, isLogin, setIsLogin }) => {
+const Header = ({users, isLogin, handleLogin, handleLogout,loading ,setLoading}) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [user , setUser] = useState({})
 
   const navigate = useNavigate();
-
-  const token = atob(Cookies.get("token") ?? "");
-  const user = users.find((user) => user.email === token);
 
   useEffect(() => {
     let prevScrollpos = window.scrollY;
@@ -34,11 +33,19 @@ const Header = ({ users, isLogin, setIsLogin }) => {
     };
   }, []);
 
-  const handleLogout = () => {
-    Cookies.remove("token");
-    setIsLogin(false);
-    
-  };
+useEffect(()=>{
+  const handleFetchUserLogin = ()=>{
+    const token = Cookies.get("token")
+    const userLogin = users.find(user => user.code === token)
+    if (!!userLogin){
+      setUser(userLogin)
+    }
+    if(isLogin){
+      setLoading(prev => !prev)
+    }
+  }
+  handleFetchUserLogin()
+},[users,isLogin,setLoading])
 
 
 
@@ -67,67 +74,63 @@ const Header = ({ users, isLogin, setIsLogin }) => {
             />
           </Link>
         </div>
+        {loading ? (<div className="header-loading"><p>loading</p> <PulseLoader color="#89c441"/></div>) :(
         <div className="header_item--right">
-          {isLogin ? (
-            <ul className="already-login">
-              <li>
-                <Link to="/tai-khoan" className="login-name">
-                  {user && user.lastName}
-                </Link>
-              </li>
-              <li>
-                <Link to="/"
-                  className="log-out"
-                  onClick={handleLogout}
-                >
-                  thoát
-                </Link>
-              </li>
-            </ul>
-          ) : (
-            <>
-              <div className="header_social_login">
-                <Link
-                  to="https://www.instagram.com/bhdstar.cineplex/"
-                  target="_blank"
-                  className="header_button_social"
-                  title="instagram"
-                >
-                  <FaInstagram className="social" />
-                </Link>
-                <Link
-                  to="https://www.facebook.com/BHDStar"
-                  target="_blank"
-                  className="header_button_social"
-                  title="facebook"
-                >
-                  <FaFacebook className="social" />
-                </Link>
-                <Link
-                  to="https://www.tiktok.com/@bhdstar.cineplex"
-                  target="_blank"
-                  className="header_button_social"
-                  title="tiktok"
-                >
-                  <FaTiktok className="social" />
-                </Link>
-                <Link
-                  to="https://www.youtube.com/user/BHDStar"
-                  target="_blank"
-                  className="header_button_social"
-                  title="youtube"
-                >
-                  <FaYoutube className="social" />
-                </Link>
-              </div>
-              <LoginHeader
-                users={users}
-                isLogin={isLogin}
-                setIsLogin={setIsLogin}
-              />
-            </>
-          )}
-        </div>
+        {isLogin ? (
+          <ul className="already-login">
+            <li>
+              <Link to="/tai-khoan" className="login-name">
+                {user.lastName}
+              </Link>
+            </li>
+            <li>
+              <Link to="/" className="log-out" onClick={handleLogout}>
+                thoát
+              </Link>
+            </li>
+          </ul>
+        ) : (
+          <>
+            <div className="header_social_login">
+              <Link
+                to="https://www.instagram.com/bhdstar.cineplex/"
+                target="_blank"
+                className="header_button_social"
+                title="instagram"
+              >
+                <FaInstagram className="social" />
+              </Link>
+              <Link
+                to="https://www.facebook.com/BHDStar"
+                target="_blank"
+                className="header_button_social"
+                title="facebook"
+              >
+                <FaFacebook className="social" />
+              </Link>
+              <Link
+                to="https://www.tiktok.com/@bhdstar.cineplex"
+                target="_blank"
+                className="header_button_social"
+                title="tiktok"
+              >
+                <FaTiktok className="social" />
+              </Link>
+              <Link
+                to="https://www.youtube.com/user/BHDStar"
+                target="_blank"
+                className="header_button_social"
+                title="youtube"
+              >
+                <FaYoutube className="social" />
+              </Link>
+            </div>
+            <LoginHeader handleLogin={handleLogin}/>
+          </>
+        )}
+      </div>)
+        }
+        
       </div>
       <div className="image--line">
         <img

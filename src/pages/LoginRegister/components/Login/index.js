@@ -1,33 +1,38 @@
-import { Link, useNavigate } from "react-router-dom";
+import { alertSuccess } from "../../../../utils/alert";
 
+import { Link, useNavigate } from "react-router-dom";
 import { useInput } from "../../../../hooks/useInput";
 import { useState } from "react";
 
-const Login = ({ users, setIsLogin, handleLogin }) => {
+const Login = ({ handleLogin }) => {
   const email = useInput();
   const password = useInput();
   const [showPass, setShowPass] = useState(false);
 
   const navigate = useNavigate();
 
-  const useLogin = () => {
-    const login = handleLogin(users, email.value, password.value);
-    if (login) {
-      navigate("/tai-khoan");
-      setIsLogin(true);
-  
-    }
-    return;
-  };
-
   const handleShowPass = () => {
     setShowPass(!showPass);
+  };
+
+  const handleLoginPage = () => {
+   const login = handleLogin(email.value, password.value);
+   if(login){
+    alertSuccess("Đăng nhập thành công");
+    email.setValue("");
+    password.setValue("");
+    navigate("/");
+   }
+    
   };
 
   return (
     <div className="container-login">
       <h2 className="login-title">đăng nhập</h2>
-      <form className="login" onSubmit={useLogin}>
+      <form
+        className="login"
+        onSubmit={handleLoginPage}
+      >
         <label htmlFor="login-email">
           Email (*)
           <input
@@ -39,7 +44,7 @@ const Login = ({ users, setIsLogin, handleLogin }) => {
             required
           />
         </label>
-        
+
         <label htmlFor="login-password">
           Mật khẩu (*)
           <input
@@ -52,19 +57,18 @@ const Login = ({ users, setIsLogin, handleLogin }) => {
           />
         </label>
         <div className="login-show-pass">
-        <label htmlFor="show-pass" className="show-pass">
-          
-          <input
-            type="checkbox"
-            id="show-pass"
-            checked={showPass}
-            onChange={handleShowPass}
-            autoComplete="checkbox"
-          />
-          hide/show password
-        </label>
+          <label htmlFor="show-pass" className="show-pass">
+            <input
+              type="checkbox"
+              id="show-pass"
+              checked={showPass}
+              onChange={handleShowPass}
+              autoComplete="checkbox"
+            />
+            hide/show password
+          </label>
         </div>
-        
+
         <div className="login-button">
           <button type="submit" title="login">
             Đăng Nhập
