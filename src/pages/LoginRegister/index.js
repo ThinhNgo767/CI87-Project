@@ -4,7 +4,7 @@ import Register from "./components/Register";
 
 import { useEffect } from "react";
 
-const LoginRegister = ({ setUsers,handleLogin ,setLoading}) => {
+const LoginRegister = ({ setUsers,handleLogin ,setIsLogin}) => {
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -14,7 +14,7 @@ const LoginRegister = ({ setUsers,handleLogin ,setLoading}) => {
     <div className="login-register">
       <Login handleLogin={handleLogin}/>
 
-      <Register setUsers={setUsers} handleLogin={handleLogin} setLoading={setLoading} />
+      <Register setUsers={setUsers} setIsLogin={setIsLogin}  />
     </div>
   );
 };

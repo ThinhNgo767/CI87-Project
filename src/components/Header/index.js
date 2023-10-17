@@ -8,9 +8,16 @@ import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { PulseLoader } from "react-spinners";
 
-const Header = ({users, isLogin, handleLogin, handleLogout,loading ,setLoading}) => {
+const Header = ({
+  users,
+  isLogin,
+  handleLogin,
+  handleLogout,
+  loading,
+  
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [user , setUser] = useState({})
+  const [user, setUser] = useState({});
 
   const navigate = useNavigate();
 
@@ -33,25 +40,23 @@ const Header = ({users, isLogin, handleLogin, handleLogout,loading ,setLoading})
     };
   }, []);
 
-useEffect(()=>{
-  const handleFetchUserLogin = ()=>{
-    const token = Cookies.get("token")
-    const userLogin = users.find(user => user.code === token)
-    if (!!userLogin){
-      setUser(userLogin)
-    }
-    if(isLogin){
-      setLoading(prev => !prev)
-    }
-  }
-  handleFetchUserLogin()
-},[users,isLogin,setLoading])
+  useEffect(() => {
+    const handleFetchUserLogin = async () => {
+      const token = Cookies.get("token");
+      const userLogin = users.find((user) => user.code === token);
+      if (!!userLogin) {
+        setUser(userLogin);
+       
+      }
+    };
+    handleFetchUserLogin();
+  }, [users]);
 
-
+  const classAdminName = user.ranks === "admin" ? "admin-login" : "login-name"
 
   return (
     <div className={isScrolled ? "header scrolled-up" : "header scrolled-down"}>
-      <MenuToggle />
+      <MenuToggle user={user} isLogin={isLogin} />
 
       <div className="header--flex">
         <div className="header_item--left">
@@ -74,63 +79,66 @@ useEffect(()=>{
             />
           </Link>
         </div>
-        {loading ? (<div className="header-loading"><p>loading</p> <PulseLoader color="#89c441"/></div>) :(
-        <div className="header_item--right">
-        {isLogin ? (
-          <ul className="already-login">
-            <li>
-              <Link to="/tai-khoan" className="login-name">
-                {user.lastName}
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="log-out" onClick={handleLogout}>
-                thoát
-              </Link>
-            </li>
-          </ul>
+        {loading ? (
+          <div className="header-loading">
+            <p>loading</p> <PulseLoader color="#89c441" />
+          </div>
         ) : (
-          <>
-            <div className="header_social_login">
-              <Link
-                to="https://www.instagram.com/bhdstar.cineplex/"
-                target="_blank"
-                className="header_button_social"
-                title="instagram"
-              >
-                <FaInstagram className="social" />
-              </Link>
-              <Link
-                to="https://www.facebook.com/BHDStar"
-                target="_blank"
-                className="header_button_social"
-                title="facebook"
-              >
-                <FaFacebook className="social" />
-              </Link>
-              <Link
-                to="https://www.tiktok.com/@bhdstar.cineplex"
-                target="_blank"
-                className="header_button_social"
-                title="tiktok"
-              >
-                <FaTiktok className="social" />
-              </Link>
-              <Link
-                to="https://www.youtube.com/user/BHDStar"
-                target="_blank"
-                className="header_button_social"
-                title="youtube"
-              >
-                <FaYoutube className="social" />
-              </Link>
-            </div>
-            <LoginHeader handleLogin={handleLogin}/>
-          </>
+          <div className="header_item--right">
+            {isLogin ? (
+              <ul className="already-login">
+                <li>
+                  <Link to="/tai-khoan" className={classAdminName} title="name">
+                    {user.lastName}
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" className="log-out" onClick={handleLogout}>
+                    thoát
+                  </Link>
+                </li>
+              </ul>
+            ) : (
+              <>
+                <div className="header_social_login">
+                  <Link
+                    to="https://www.instagram.com/bhdstar.cineplex/"
+                    target="_blank"
+                    className="header_button_social"
+                    title="instagram"
+                  >
+                    <FaInstagram className="social" />
+                  </Link>
+                  <Link
+                    to="https://www.facebook.com/BHDStar"
+                    target="_blank"
+                    className="header_button_social"
+                    title="facebook"
+                  >
+                    <FaFacebook className="social" />
+                  </Link>
+                  <Link
+                    to="https://www.tiktok.com/@bhdstar.cineplex"
+                    target="_blank"
+                    className="header_button_social"
+                    title="tiktok"
+                  >
+                    <FaTiktok className="social" />
+                  </Link>
+                  <Link
+                    to="https://www.youtube.com/user/BHDStar"
+                    target="_blank"
+                    className="header_button_social"
+                    title="youtube"
+                  >
+                    <FaYoutube className="social" />
+                  </Link>
+                </div>
+                <LoginHeader handleLogin={handleLogin} />
+              </>
+            )}
+          </div>
         )}
-      </div>)
-        }
-        
       </div>
       <div className="image--line">
         <img

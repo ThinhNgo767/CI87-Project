@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { useInput } from "../../hooks/useInput";
-import { alertSuccess } from "../../utils/alert";
 
 const LoginHeader = ({ handleLogin }) => {
   const [openLogin, setOpenLogin] = useState(false);
@@ -36,14 +35,10 @@ const LoginHeader = ({ handleLogin }) => {
   };
 
   const handleLoginHeader = () => {
-   const login = handleLogin(email.value, password.value);
-   if(login){
-    alertSuccess("Đăng nhập thành công");
+    handleLogin(email.value, password.value);
     setOpenLogin(false);
-    email.setValue("")
-    password.setValue("")
-   }
-    
+    email.setValue("");
+    password.setValue("");
   };
 
   return (

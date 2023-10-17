@@ -1,5 +1,5 @@
 import "./style.css";
-import { updatetUser } from "../../../../api/users";
+import { updateUser } from "../../../../api/users";
 import { useInput } from "../../../../hooks/useInput";
 
 import React, { useState } from "react";
@@ -11,7 +11,7 @@ const newPass =useInput()
   const {
     id,
     email,
-    password,
+    ranks,
     fistName,
     lastName,
     phone,
@@ -27,7 +27,7 @@ const newPass =useInput()
     password : newPass.value
   }
   try{
-    await updatetUser(id,newPassword)
+    await updateUser(id,newPassword)
     setEditPassword(!editPassword)
   }catch{
     console.error()
@@ -44,7 +44,7 @@ const newPass =useInput()
         <div className="info-pass">
           <label htmlFor="user-pass" className="pass-user">
             <span>mật khẩu</span>
-            <input type="password" id="user-pass" autoComplete="current-password" value={password} disabled />
+            <input type="password" id="user-pass" autoComplete="current-password" value="********" disabled />
             <button
               type="button"
               onClick={() => setEditPassword(!editPassword)}
@@ -74,6 +74,10 @@ const newPass =useInput()
         <label htmlFor="user-lastname">
           <span>tên</span>
           <input type="text" id="user-lastname" value={lastName} disabled />
+        </label>
+        <label htmlFor="user-ranks">
+          <span>ranks</span>
+          <input type="text" id="user-ranks" value={ranks} disabled />
         </label>
         <label htmlFor="user-phone">
           <span>số điện thoại</span>

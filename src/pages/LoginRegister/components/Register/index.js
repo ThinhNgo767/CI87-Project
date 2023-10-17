@@ -6,23 +6,21 @@ import {
   alertWanning,
 } from "../../../../utils/alert";
 import {
-  validateFomatPassword,
-  validateFomatEmail,
-  valiDuplePass,
+  validateDuplePass,
+  validateFormatEmail,
+  validateFormatPassword,
   validatePhone,
 } from "../../../../utils/validate";
-import { creatUser } from "../../../../api/users";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import Cookies from "js-cookie";
 import axios from "axios";
 
-const Register = ({ setUsers, handleLogin ,setLoading}) => {
+const Register = ({ setUsers }) => {
   const [checked, setChecked] = useState(false);
   const [isValid, setIsValid] = useState(true);
-  const [succeed,setSucceed] =useState(false)
   const fistName = useInput();
   const lastName = useInput();
   const email = useInput();
@@ -37,17 +35,15 @@ const Register = ({ setUsers, handleLogin ,setLoading}) => {
 
   const navigate = useNavigate();
 
+  const inputRef = useRef(null);
+
+  const currentTime = new Date()
+
   useEffect(() => {
-    const LoginCompletedRegister = () => {
-      if (succeed) {
-        const login = handleLogin(email.value, password.value);
-        if (login) {
-          navigate("/");
-        }
-      }
-    };
-    LoginCompletedRegister();
-  }, [succeed,email.value, password.value, handleLogin, navigate]);
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
 
   const handleReceiveData = (city, district, ward) => {
     cityProvince.setValue(city);
@@ -55,10 +51,10 @@ const Register = ({ setUsers, handleLogin ,setLoading}) => {
     wards.setValue(ward);
   };
 
-  const validate = () => {
-    const validatePassword = validateFomatPassword(password.value);
-    const validateEmail = validateFomatEmail(email.value);
-    const valiDuplePassword = valiDuplePass(
+  const validateFormRegister = () => {
+    const validatePassword = validateFormatPassword(password.value);
+    const validateEmail = validateFormatEmail(email.value);
+    const valiDuplePassword = validateDuplePass(
       password.value,
       reEnterPassword.value
     );
@@ -94,61 +90,64 @@ const Register = ({ setUsers, handleLogin ,setLoading}) => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const API_URL = "https://65219433a4199548356d628d.mockapi.io/";
-    try {
-      const checkValidate = validate();
+    const API_URL = "https://65219433a4199548356d628d.mockapi.io";
+    axios
+      .get(`${API_URL}/user`)
+      .then((res) => {
+        const users = res.data;
 
-      if (!checkValidate) return;
+        const checkValidate = validateFormRegister();
+        if (!checkValidate) return;
 
-      await axios
-        .get(`${API_URL}/user`)
-        .then((response) => {
-          const users = response.data;
-          const checked = users.every((user) => user.email !== email.value);
-
-          if (checked) {
-            const newUser = {
-              avatar: "",
-              fistName: fistName.value,
-              lastName: lastName.value,
-              email: email.value,
-              password: password.value,
-              phone: phone.value,
-              birthday: birthday.value,
-              location: {
-                city: cityProvince.value,
-                district: districts.value,
-                wards: wards.value,
-              },
-              address: address.value,
-              code: uuidv4(),
-            };
-
-            creatUser(newUser);
-
-            Cookies.set("token", newUser.code, {
-              expires: new Date(Date.now() + 30 * 60 * 1000),
-            });
-
-            setUsers((prve) => {
-              const users = [...prve, newUser];
-
-              return users;
-            });
-            setSucceed(true)
-            setLoading(true)
-            alertSuccess("Đăng kí thành công");
-            
-          } else {
-            alertError("Email đã tồn tại");
-          }
-        })
-        .catch(() => {
+        const checked = users.find((user) => user.email === email.value);
+        if (checked) {
+          alertError("Email đã tồn tại");
           return;
-        });
-    } catch (error) {
-      alertWanning("error");
-    }
+        } else {
+          const newUser = {
+            dateRegister : currentTime,
+            avatar: "",
+            fistName: fistName.value,
+            lastName: lastName.value,
+            email: email.value,
+            password: password.value,
+            phone: phone.value,
+            birthday: birthday.value,
+            location: {
+              city: cityProvince.value,
+              district: districts.value,
+              wards: wards.value,
+            },
+            ranks: "member",
+            status: "open",
+            address: address.value,
+            code: uuidv4(),
+          };
+          axios
+            .post(`${API_URL}/user`, newUser)
+            .then((res) => {
+              
+              Cookies.set("token", newUser.code, {
+                expires: new Date(Date.now() + 30 * 60 * 1000),
+              });
+              setUsers((prve) => {
+                const users = [...prve, newUser];
+
+                return users;
+              });
+             
+
+              alertSuccess("Đăng kí thành công");
+              navigate("/");
+            })
+            .catch(() => {
+              alertWanning("Đăng ký thất bại");
+            });
+        }
+      })
+      .catch(() => {
+        alertWanning("error");
+      });
   };
 
   return (
@@ -158,6 +157,7 @@ const Register = ({ setUsers, handleLogin ,setLoading}) => {
         <label htmlFor="register-fistname">
           Họ (*)
           <input
+            ref={inputRef}
             type="text"
             id="register-fistname"
             value={fistName.value}

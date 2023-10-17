@@ -154,6 +154,7 @@ button.header_button--toggle {
 .modal-header-login {
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: absolute;
   right: -2.5rem;
   top: 3.5rem;
@@ -181,9 +182,9 @@ button.header_button--toggle {
   color: #000;
 }
 .form-button-sigup {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  width: 100%;
+  margin: 1rem 0;
+    font-size: 0.9rem;
+    min-width: 83%;
 }
 .form-button-sigup:hover {
   background-color: #8ac441;
@@ -211,11 +212,17 @@ button.header_button--toggle {
   margin-left: 1rem;
 }
 a.login-name,
-a.log-out {
+a.log-out ,a.admin-login {
   text-decoration: none;
 }
 a.login-name {
   color: #89c441;
+}
+a.admin-login{
+  color: #ff0000;
+}
+a.admin-login:hover{
+  color: #fff;
 }
 a.log-out {
   color: #fff;

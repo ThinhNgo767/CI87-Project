@@ -1,13 +1,13 @@
 
-export const validateFomatPassword = (password) => {
+export const validateFormatPassword = (password) => {
   return /(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}/.test(password);
 };
 
-export const validateFomatEmail = (email) => {
+export const validateFormatEmail = (email) => {
   return /^[^@]+@[^@]+\.[^@]{3,}$/.test(email);
 };
 
-export const valiDuplePass = (pass,rePass) => {
+export const validateDuplePass = (pass,rePass) => {
   return pass === rePass
 };
 export const validatePhone = (phone) => {

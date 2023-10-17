@@ -2,13 +2,24 @@ import { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const MenuToggle = () => {
+const MenuToggle = ({user ,isLogin}) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [showDashboard, setShowDashboard]= useState(false)
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
+
+  useEffect(()=>{
+    const handleShowDashboard = ()=>{
+      if(isLogin && (user.ranks === "admin" || user.ranks ===  "collaborate")){
+        setShowDashboard(true)
+      }
+    }
+    handleShowDashboard()
+  },[user.ranks,isLogin])
+  
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -42,6 +53,10 @@ const MenuToggle = () => {
             ref={menuRef}
             onClick={() => setOpenMenu(!openMenu)}
           >
+            {isLogin && showDashboard && <li>
+              <Link to="/admin">dashboard</Link>
+            </li>}
+            
             <li>
               <Link to="/lich-theo-chieu-phim">lịch chiếu</Link>
             </li>

@@ -56,4 +56,9 @@ label.chang-pass-user input{
   min-width: 10rem;
   margin-left: 5.3rem;
 }
-
+#user-fistname ,#user-lastname{
+  text-transform: capitalize;
+}
+#user-ranks{
+  color: #54AB35;
+}

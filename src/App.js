@@ -1,9 +1,9 @@
 import "./App.css";
 import { fetchUser } from "./api/users";
 import { fetchMovies } from "./api/movies";
-import { updatetUser } from "./api/users";
+import { updateUser } from "./api/users";
 import { useAuth } from "./hooks/useAuth";
-import { alertError } from "./utils/alert";
+import { alertError, alertWanning, alertSuccess } from "./utils/alert";
 import THEATERS from "./data/Theater";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -22,20 +22,20 @@ import Account from "./pages/Account";
 import Error from "./pages/Error";
 import Contact from "./pages/Contact";
 import TheaterDetail from "./pages/Cinema/TheaterDetail";
+import Dashboard from "./pages/Dashboard";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import Cookies from "js-cookie";
+
 
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [users, setUsers] = useState([]);
-  const [usersChange , setUsersChange] = useState(false)
-  const [loading , setLoading] =useState(false)
-  const { isLogin, setIsLogin } = useAuth();
-  
+  const [usersChange, setUsersChange] = useState(false);
+  const { isLogin, setIsLogin ,loading} = useAuth();
 
   const navigate = useNavigate();
 
@@ -46,9 +46,8 @@ const App = () => {
         if (resultUsers.length > 0) {
           setUsers(resultUsers);
         }
-
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error("Error fetching user data:", error);
       }
     };
 
@@ -63,7 +62,7 @@ const App = () => {
           setMovies(resultMovies);
         }
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error("Error fetching user data:", error);
       }
     };
 
@@ -74,20 +73,35 @@ const App = () => {
     const userLogin = users.find(
       (user) => email === user.email && password === user.password
     );
+
     const newCode = {
-      code : uuidv4()
-    }
-    if (!!userLogin) {
-      setLoading(true)
-      await updatetUser(userLogin.id ,newCode)
-      setUsersChange(prev => !prev);
-      Cookies.set("token", newCode.code, {
-        expires: new Date(Date.now() + 30 * 60 * 1000),
-      });
-      navigate("/");
-    } else {
+      code: uuidv4(),
+    };
+
+    if (!userLogin) {
       alertError("Sai email hoặc password");
       return;
+    }
+    if (userLogin.status === "close") {
+      alertWanning("Tài khoản bạn đã bị khóa vui lòng gọi đến CSKH");
+      return;
+    }
+
+    if (userLogin) {
+      await updateUser(userLogin.id, newCode)
+        .then(() => {
+      
+          setUsersChange((prev) => !prev);
+          Cookies.set("token", newCode.code, {
+            expires: new Date(Date.now() + 30 * 60 * 1000),
+          });
+          navigate("/");
+          alertSuccess("Đăng nhập thành công.");
+
+        })
+        .catch(() => {
+          alertError("Đã có lỗi xảy ra");
+        });
     }
   };
 
@@ -104,10 +118,22 @@ const App = () => {
         handleLogin={handleLogin}
         handleLogout={handleLogout}
         loading={loading}
-        setLoading={setLoading}
+        
       />
       <Routes>
         <Route path="/" element={<Home movies={movies} />} />
+        <Route
+          path="/admin"
+          element={
+            <Dashboard
+              users={users}
+              isLogin={isLogin}
+              setUsers={setUsers}
+              handleLogout={handleLogout}
+            
+            />
+          }
+        />
         <Route
           path="/lich-theo-chieu-phim"
           element={<ShowTimes movies={movies} />}
@@ -136,10 +162,10 @@ const App = () => {
           path="/dang-ky"
           element={
             <LoginRegister
-              setUsers={setUsers}
-          
               handleLogin={handleLogin}
-              setLoading={setLoading}
+              setUsers={setUsers}
+              setIsLogin={setIsLogin}
+              
             />
           }
         />

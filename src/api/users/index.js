@@ -22,9 +22,19 @@ export const creatUser = async (user) => {
   }
 };
 
-export const updatetUser = async (id,data) => {
+export const updateUser = async (id,data) => {
   try {
     const response = await axios.put(`${API_URL}/user/${id}`,data);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+   
+  }
+};
+
+export const deleteUser = async (id) => {
+  try {
+    const response = await axios.delete(`${API_URL}/user/${id}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);

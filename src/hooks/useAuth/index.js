@@ -6,25 +6,32 @@ const getTokenFromCookie = () => {
 };
 
 export const useAuth = () => {
-
-  const [isLogin, setIsLogin] = useState(getTokenFromCookie());
+  const [isLogin, setIsLogin] = useState(() => {
+    return getTokenFromCookie();
+  });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const checkChange = () => {
-      const newCookies = getTokenFromCookie();
-
-      if (newCookies !== isLogin) {
-        setIsLogin(newCookies);
+    const handleCookieChange = () => {
+      const newToken = getTokenFromCookie();
+      if (newToken !== isLogin) {
+        setLoading(true);
+        setIsLogin(newToken);
       }
+      setLoading(false)
     };
 
-    const interval = setInterval(checkChange, 5000);
+    const observer = new MutationObserver(handleCookieChange);
+    observer.observe(document, { subtree: true, childList: true });
 
-    return () => clearInterval(interval);
+    return () => {
+      observer.disconnect();
+    };
   }, [isLogin]);
 
   return {
     isLogin,
     setIsLogin,
+    loading
   };
 };
