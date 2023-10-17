@@ -1,7 +1,7 @@
 import React from "react";
 import SideLocationCinema from "../../components/SideLocationCinema";
 
-function Contact() {
+function Contact({theaters}) {
   return (
     <div className="warper-content">
       <div className="page--wrapper">
@@ -50,7 +50,7 @@ function Contact() {
             </div>
           </div>
           <div className="about--us-sidebar">
-            <SideLocationCinema />
+            <SideLocationCinema theaters={theaters}/>
           </div>
         </div>
       </div>

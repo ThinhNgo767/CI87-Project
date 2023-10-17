@@ -1,9 +1,8 @@
-.info-top,
+
 .info-top-title {
   max-width: 80%;
 }
 .info-top {
-  min-width: 80%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -63,4 +62,19 @@ img.info-avatar {
 .info-top-title strong {
   color: #42b033;
   text-transform: capitalize;
+}
+@media only screen and (max-width: 576px) {
+  .info-top {
+   flex-direction: column;
+  }
+  .title-info-upload {
+    max-width: 100%;
+    padding-left: 1rem;
+}
+.image-container{
+  margin-left: 1rem;
+}
+img.info-avatar{
+  min-height: 10rem;
+}
 }

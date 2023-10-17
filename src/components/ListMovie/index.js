@@ -1,10 +1,10 @@
-import React from "react";
-import { useState } from "react";
-
 import "./style.css";
 import MovieShowing from "../MovieShowing";
 import UpComingMoive from "../UpcomingMovie";
 import PreSaleTickets from "../PreSaleTickets";
+
+import { useState } from "react";
+
 
 const ListMovie = ({movies}) => {
   const [active , setActive] = useState("active")
@@ -29,7 +29,7 @@ const ListMovie = ({movies}) => {
               Phim Sắp Chiếu
             </h3>
           </li>
-          <li>
+          <li className="presaleticket">
             <h3
               onClick={() => setActive("presaletickets")}
               className={active === "presaletickets" ? "active-link" : ""}

@@ -1,8 +1,9 @@
 .login-register {
-  height: 100%;
+  min-height: 100%;
   padding: 5rem 3rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 3rem;
   background: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-cinema-10.png)
     repeat;
@@ -19,7 +20,6 @@
   padding-bottom: 0.5rem;
   font-size: 1.5rem;
   font-weight: 600;
-  
 }
 .login,
 .register {
@@ -65,7 +65,7 @@
 .login-register input,
 .login-register select {
   width: 20rem;
-  height: 2.2rem;
+  min-height: 2.2rem;
   border: none;
   border-radius: 3px;
   outline: none;
@@ -108,25 +108,29 @@ input[type="date"] {
   align-items: center;
   gap: 0.5rem;
 }
-.login-show-pass{
+.login-show-pass {
   display: flex;
   justify-content: flex-end;
 }
 label.show-pass {
   justify-content: flex-end;
-    gap: 0.5rem;
-    color: #616e72;
-    text-transform: capitalize;
-    font-style: italic;
-    font-size: 0.9rem;
-    padding-top: 0.25rem;
-    margin-right: 0.5rem;
+  gap: 0.5rem;
+  color: #616e72;
+  text-transform: capitalize;
+  font-style: italic;
+  font-size: 0.9rem;
+  padding-top: 0.25rem;
+  margin-right: 0.5rem;
 }
 input#show-pass {
   width: 0.9rem;
   height: 0.9rem;
   border: none;
   outline: none;
+}
+.acceps-regulation a {
+  
+  color: #54ab35;
 }
 #register-fistname,
 #register-lastname {
@@ -140,4 +144,35 @@ input#show-pass {
 }
 .colored-toast.swal2-icon-warning {
   background-color: #f8bb86 !important;
+}
+@media only screen and (max-width: 576px) {
+  .container-register {
+    width: 90%;
+    padding-bottom: 20vh;
+  }
+  .login-register,
+  .register {
+    padding: 1rem 0 0 0.25rem;
+  }
+  .container-login {
+    display: none;
+  }
+
+  .login-register input,
+  .login-register select {
+    width: 11rem;
+  }
+  input#acceps{
+    width: 1rem;
+  }
+  .acceps-regulation p{
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  button.submit-register{
+    width: 100%;
+    max-height: 2.3rem;
+    margin-bottom: 1rem;
+  }
+  
 }

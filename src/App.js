@@ -155,7 +155,7 @@ const App = () => {
           path="/quang-cao"
           element={<Advertisement theaters={THEATERS} />}
         />
-        <Route path="/lien-he" element={<Contact />} />
+        <Route path="/lien-he" element={<Contact theaters={THEATERS} />} />
         <Route path="/ve-chung-toi" element={<Abouts theaters={THEATERS} />} />
 
         <Route

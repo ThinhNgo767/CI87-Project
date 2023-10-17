@@ -43,7 +43,7 @@
 }
 .pass-user button ,.chang-pass-user button{
   width: 8rem;
-  height: 2rem;
+  min-height: 2rem;
   font-size: 0.9rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -61,4 +61,33 @@ label.chang-pass-user input{
 }
 #user-ranks{
   color: #54AB35;
+}
+@media only screen and (max-width: 576px) {
+  .infomation-user{
+    padding-bottom: 8rem;
+  }
+  .info-bottom{
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .infomation-user input {
+    min-width: 0;
+    min-width: 18rem;
+  }
+  .infomation-user label {
+    max-width: 90%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  label.pass-user input ,label.chang-pass-user input{
+    min-width: 18rem;
+    margin-left: 0;
+    padding-left: 0.25rem;
+}
+.pass-user button, .chang-pass-user button{
+  font-size: 0.8rem;
+}
+
 }

@@ -61,7 +61,7 @@
 .list--news {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 40px;
+  grid-column-gap: 2.5rem;
 }
 
 li.left::marker {
@@ -76,4 +76,28 @@ li.left::marker {
 .page-wrapper {
   background: #e8e8e8;
   padding: 21px 0 127px;
+}
+.container-cinema .like-share {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 576px) {
+  .list--news {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cinema-listmovie {
+    padding-top: 75vh;
+  }
+  .container-cinema .like-share {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+  .container-cinema .like-share span {
+    margin: 0;
+  }
+  .container-cinema a.news-title{
+    padding: 0.5rem 0;
+  }
 }

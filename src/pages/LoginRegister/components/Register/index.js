@@ -13,7 +13,7 @@ import {
 } from "../../../../utils/validate";
 
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -252,10 +252,11 @@ const Register = ({ setUsers }) => {
               checked={checked}
               onChange={() => setChecked(!checked)}
             />
-            Tôi đã đọc, hiểu và đồng ý với các điều khoản
+            <p>Tôi đã đọc, hiểu và đồng ý với <Link to="/quy-dịnh">các điều khoản</Link> </p>
+            
           </label>
         </div>
-        <button type="submit" title="register">
+        <button type="submit" title="register" className="submit-register">
           Đăng Ký
         </button>
       </form>

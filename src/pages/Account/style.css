@@ -1,5 +1,5 @@
 .account {
-  height: 100%;
+  min-height: 100%;
   padding: 3rem 8rem 8rem 8rem;
   background: url(https://www.bhdstar.vn/wp-content/themes/bhd/assets/images/bg-cinema-10.png)
     repeat;
@@ -27,4 +27,15 @@
 .navigate a:hover ,a.navigate-active{
   color: #d4dd29;
   border-bottom: 2px solid #d4dd29;
+}
+@media only screen and (max-width: 576px) {
+  .account {
+    padding: 0;
+  }
+  .account .navigate a {
+    font-size: 1.2rem;
+  }
+  .info-top-title ,.info-top ,.info-bottom{
+    min-width: 90%;
+  }
 }

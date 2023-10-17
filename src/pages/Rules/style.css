@@ -105,3 +105,22 @@ ul.item-text-ul--style > li{
     color: #54AB35;
     margin-left: -13rem;
   }
+  @media only screen and (max-width: 576px) {
+    .rules .rule-content{
+      flex-direction: column;
+    }
+    .rule-content-left .item-text {
+      max-width: 90%;
+    }
+    .rule-content-left , .rule-sider-right{
+      max-width: 100%;
+      padding: 0;
+    }
+    .rule-footer {
+      justify-content: space-between;
+      padding: 0 0.75rem;
+    }
+    .rule-footer .tag--list {
+      margin-left: 0;
+    }
+  }

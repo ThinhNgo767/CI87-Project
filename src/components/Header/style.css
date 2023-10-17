@@ -243,3 +243,15 @@ a.log-out {
   font-weight: 600;
   color: #89c441;
 }
+@media only screen and (max-width: 576px) {
+  .header_button_order-ticket,.header_logo ,.header_social_login{
+    display: none;
+  }
+  .modal-header-login{
+    right: -1.5rem;
+    z-index: 4;
+  }
+  .image--line img{
+    max-width: 100vw;
+  }
+}

@@ -115,3 +115,12 @@ button.btn-antd {
   margin-right: 0.5rem;
   font-size: 1rem;
 }
+@media only screen and (max-width: 576px) {
+  li.presaleticket {
+    display: none;
+  }
+  .nav--titles h3{
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}

@@ -141,3 +141,11 @@
   text-transform: uppercase;
   font-weight: 600;
 }
+@media only screen and (max-width: 576px) {
+  .about--us-content  {
+     max-width: 100%;
+  }
+  .about--us-sidebar{
+    width: 100%;
+  }
+}

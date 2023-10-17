@@ -39,3 +39,16 @@
     margin: 2rem;
     border-radius: 5px;
 }
+@media only screen and (max-width: 576px) {
+  .regulation-member{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .regulation-content-member ,.list-promotion{
+max-width: 90%;
+  }
+.title-promotion h3{
+  font-size: 1.2rem;
+}
+}

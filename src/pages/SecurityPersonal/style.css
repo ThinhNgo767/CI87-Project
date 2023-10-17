@@ -109,4 +109,27 @@ ol.item-text-ul--style ul > li{
     font-size: 1.5rem;
     color: #54AB35;
   }
+  @media only screen and (max-width: 576px) {
+    .security-content{
+      flex-direction: column;
+    }
+    .security-content-left ,.security-sider-right{
+      max-width: 100%;
+    }
+    .security-content-left{
+      padding: 0 1rem;
+    }
+    .security-content-left .item-text{
+      max-width: 90%;
+    }
+    .security-sider-right{
+      padding-bottom: 3rem;
+      padding-top: 0;
+      padding-right :0
+    }
+    ol.item-text-ul--style ul > li{
+      margin-left: 0;
+    }
+    
+  }
   

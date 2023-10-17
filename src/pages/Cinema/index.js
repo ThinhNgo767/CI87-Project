@@ -30,7 +30,7 @@ const Cinema = ({movies ,theaters}) => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="cinema-listmovie">
         <ListMovie movies={movies} />
       </div>
     </div>

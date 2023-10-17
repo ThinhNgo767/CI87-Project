@@ -262,3 +262,11 @@ svg::before {
   width: 25%;
   padding: 0 11px 30px;
 }
+@media only screen and (max-width: 768px) {
+  .section--product-view::before {
+    display: none;
+  }
+  .list--info li {
+    width: 50%;
+  }
+}

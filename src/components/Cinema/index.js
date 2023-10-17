@@ -17,10 +17,13 @@ function Cinama({theaters}) {
             <Link className="news-title" to={`/he-thong-rap/${cinema.href}`}>
               {cinema.name}
             </Link>
+            <div className="like-share">
             <span>{cinema.amount_like}</span>
-            <a href="*" className="btn--share">
+            <Link href="#" className="btn--share">
               Chia sẻ
-            </a>
+            </Link>
+            </div>
+            
           </div>
         </li>
       ))}
