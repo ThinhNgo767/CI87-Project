@@ -14,7 +14,9 @@ const Header = ({
   handleLogin,
   handleLogout,
   loading,
-  
+  openLogin,
+  setOpenLogin,
+  handleOpenFromLogin,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [user, setUser] = useState({});
@@ -46,16 +48,26 @@ const Header = ({
       const userLogin = users.find((user) => user.code === token);
       if (!!userLogin) {
         setUser(userLogin);
-       
       }
     };
     handleFetchUserLogin();
   }, [users]);
 
-  const classAdminName = user.ranks === "admin" ? "admin-login" : "login-name"
+  const classAdminName =
+    user.ranks === "admin"
+      ? "admin-login"
+      : user.ranks === "collaborate"
+      ? "collab-login"
+      : "login-name";
+
+  const classHeaderScroll = isScrolled
+    ? "header scrolled-up"
+    : openLogin
+    ? "header scrolled-up"
+    : "header scrolled-down";
 
   return (
-    <div className={isScrolled ? "header scrolled-up" : "header scrolled-down"}>
+    <div className={classHeaderScroll}>
       <MenuToggle user={user} isLogin={isLogin} />
 
       <div className="header--flex">
@@ -88,7 +100,11 @@ const Header = ({
             {isLogin ? (
               <ul className="already-login">
                 <li>
-                  <Link to="/tai-khoan" className={classAdminName} title="name">
+                  <Link
+                    to="/tai-khoan"
+                    className={classAdminName}
+                    title={user.ranks}
+                  >
                     {user.lastName}
                   </Link>
                 </li>
@@ -134,7 +150,12 @@ const Header = ({
                     <FaYoutube className="social" />
                   </Link>
                 </div>
-                <LoginHeader handleLogin={handleLogin} />
+                <LoginHeader
+                  handleLogin={handleLogin}
+                  openLogin={openLogin}
+                  setOpenLogin={setOpenLogin}
+                  openFromLogin={handleOpenFromLogin}
+                />
               </>
             )}
           </div>

@@ -1,10 +1,14 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { useInput } from "../../hooks/useInput";
 
-const LoginHeader = ({ handleLogin }) => {
-  const [openLogin, setOpenLogin] = useState(false);
+const LoginHeader = ({
+  handleLogin,
+  openLogin,
+  setOpenLogin,
+  openFromLogin,
+}) => {
   const email = useInput();
   const password = useInput();
   const loginRef = useRef(null);
@@ -23,11 +27,7 @@ const LoginHeader = ({ handleLogin }) => {
     return () => {
       document.removeEventListener("click", handleClickOutside, true);
     };
-  }, []);
-
-  const openFromLogin = () => {
-    setOpenLogin(!openLogin);
-  };
+  }, [setOpenLogin]);
 
   const handleSignUpClick = () => {
     navigate("/dang-ky");

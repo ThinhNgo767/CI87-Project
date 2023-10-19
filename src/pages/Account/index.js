@@ -1,11 +1,12 @@
 import "./style.css";
 import Infomation from "./components/Infomation";
 import Regulation from "../../components/RegulationMember";
+import Cart from "../../components/Cart";
 
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Account = ({ users, isLogin }) => {
+const Account = ({ users, isLogin ,cart ,handleUpdateCart}) => {
   const [active, setActive] = useState("info");
   const navigate = useNavigate();
 
@@ -34,7 +35,15 @@ const Account = ({ users, isLogin }) => {
           onClick={() => setActive("regula")}
           className={active === "regula" ? "navigate-active" : ""}
         >
-          quy định{" "}
+          quy định
+        </Link>
+        <span>|</span>
+        <Link
+          to="#"
+          onClick={() => setActive("cart")}
+          className={active === "cart" ? "navigate-active" : ""}
+        >
+          giỏ hàng
         </Link>
       </div>
       {active === "info" && (
@@ -43,6 +52,11 @@ const Account = ({ users, isLogin }) => {
       {active === "regula" && (
         <div className="account-regulation">
           <Regulation />
+        </div>
+      )}
+      {active === "cart" && (
+        <div className="account-regulation">
+          <Cart cart={cart} handleUpdateCart={handleUpdateCart}/>
         </div>
       )}
     </div>

@@ -1,6 +1,6 @@
 .add_user{
     min-height: 100vh;
-    width: 100%;
+    max-width: 100%;
     padding-bottom: 30vh;
 }
 .add_user h1 {
@@ -48,7 +48,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    width: 50%;
+    max-width: 50%;
     margin: 0 auto;
 }
 .form_add_user .provinces{
@@ -84,4 +84,29 @@
 }
 #add_user-fistname , #add_user-lastname{
     text-transform: capitalize;
+}
+@media only screen and (max-width: 576px){
+.form_add_user{
+    max-width: 100%;
+}
+.form_add_user input, .form_add_user select{
+    min-width: 10rem;
+    margin-right: 1rem;
+}
+.form_add_user label{
+    max-width: 100%;
+}
+.form_add_user span {
+    max-width: 50%;
+}
+.form_add_user span ,.provinces label{
+    margin-left: 1rem;
+}
+.add_user--button{
+padding: 0;
+justify-content: center;
+}
+button.add_new_user{
+    min-width: 8rem;
+}
 }

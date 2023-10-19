@@ -29,13 +29,15 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Cookies from "js-cookie";
 
-
+const carts = JSON.parse(localStorage.getItem("cart"));
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [users, setUsers] = useState([]);
+  const [cart, setCart] = useState(carts ?? []);
   const [usersChange, setUsersChange] = useState(false);
-  const { isLogin, setIsLogin ,loading} = useAuth();
+  const [openLogin, setOpenLogin] = useState(false);
+  const { isLogin, setIsLogin, loading } = useAuth();
 
   const navigate = useNavigate();
 
@@ -90,14 +92,12 @@ const App = () => {
     if (userLogin) {
       await updateUser(userLogin.id, newCode)
         .then(() => {
-      
           setUsersChange((prev) => !prev);
           Cookies.set("token", newCode.code, {
             expires: new Date(Date.now() + 30 * 60 * 1000),
           });
           navigate("/");
           alertSuccess("Đăng nhập thành công.");
-
         })
         .catch(() => {
           alertError("Đã có lỗi xảy ra");
@@ -110,6 +110,14 @@ const App = () => {
     Cookies.remove("token");
   };
 
+  const handleUpdateCart = (cart) => {
+    setCart(cart);
+  };
+
+  const handleOpenFromLogin = () => {
+    setOpenLogin(!openLogin);
+  };
+
   return (
     <div className="App">
       <Header
@@ -118,7 +126,9 @@ const App = () => {
         handleLogin={handleLogin}
         handleLogout={handleLogout}
         loading={loading}
-        
+        openLogin={openLogin}
+        setOpenLogin={setOpenLogin}
+        handleOpenFromLogin={handleOpenFromLogin}
       />
       <Routes>
         <Route path="/" element={<Home movies={movies} />} />
@@ -130,7 +140,6 @@ const App = () => {
               isLogin={isLogin}
               setUsers={setUsers}
               handleLogout={handleLogout}
-            
             />
           }
         />
@@ -165,14 +174,20 @@ const App = () => {
               handleLogin={handleLogin}
               setUsers={setUsers}
               setIsLogin={setIsLogin}
-              
             />
           }
         />
 
         <Route
           path="/tai-khoan"
-          element={<Account users={users} isLogin={isLogin} />}
+          element={
+            <Account
+              users={users}
+              isLogin={isLogin}
+              cart={cart}
+              handleUpdateCart={handleUpdateCart}
+            />
+          }
         />
         <Route path="/quy-dinh-thanh-vien" element={<RegulationMember />} />
         <Route path="/dieu-khoan" element={<Rules theaters={THEATERS} />} />
@@ -180,7 +195,17 @@ const App = () => {
           path="/bao-mat-thong-tin"
           element={<SecurityPersonal theaters={THEATERS} />}
         />
-        <Route path="/movie/:movieId" element={<Movie movies={movies} />} />
+        <Route
+          path="/movie/:movieId"
+          element={
+            <Movie
+              movies={movies}
+              isLogin={isLogin}
+              setCart={setCart}
+              openFromLogin={handleOpenFromLogin}
+            />
+          }
+        />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

@@ -95,6 +95,7 @@ td.button {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 .title-dashboard button {
@@ -115,4 +116,22 @@ td.button {
 }
 td.button-delete{
     text-align: center;
+}
+.table-list{
+  overflow-x:auto;
+}
+@media only screen and (max-width: 576px){
+  .table-list{
+    padding-bottom: 5rem;
+  }
+  .title-dashboard{
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+  }
+  .dashboard h1{
+    font-size: 1.4rem;
+  }
+  .button-adduser{
+    margin-left: 1rem;
+  }
 }

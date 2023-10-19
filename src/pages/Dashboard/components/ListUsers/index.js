@@ -13,7 +13,6 @@ const ListUsers = ({ user, admin, handleUpdateUser, handleDeleteUser }) => {
   const fistName = useInput(user.fistName);
   const lastName = useInput(user.lastName);
   const email = useInput(user.email);
-  const password = useInput("");
   const ranks = useInput(user.ranks);
   const status = useInput(user.status);
 
@@ -38,7 +37,6 @@ const ListUsers = ({ user, admin, handleUpdateUser, handleDeleteUser }) => {
     fistName: fistName.value,
     lastName: lastName.value,
     email: email.value,
-    password: password.value,
     ranks: ranks.value,
     status: status.value,
   };
@@ -94,24 +92,15 @@ const ListUsers = ({ user, admin, handleUpdateUser, handleDeleteUser }) => {
           <td>
             <span>{date}</span>
           </td>
-          <td>
-            {admin || user.ranks !== "admin" ? (
-              <input
-                type="password"
-                value={password.value}
-                onChange={password.onChange}
-                autoComplete="current-password"
-              />
-            ) : (
-              <span hidden>{user.password}</span>
-            )}
-          </td>
+
           <td>
             {admin || user.ranks !== "admin" ? (
               <select value={ranks.value} onChange={ranks.onChange}>
                 <option value="member">Member</option>
-                <option value="admin">Admin</option>
-                <option value="collaborate">Collab</option>
+                {admin && 
+                  <option value="admin">Admin</option>
+                }
+                {admin && <option value="collaborate">Collab</option>}
               </select>
             ) : (
               <span className="ranks">{user.ranks}</span>
@@ -183,9 +172,6 @@ const ListUsers = ({ user, admin, handleUpdateUser, handleDeleteUser }) => {
           </td>
           <td>
             <span>{date}</span>
-          </td>
-          <td>
-            <span hidden>{user.password}</span>
           </td>
           <td>
             <span className="ranks">{user.ranks}</span>

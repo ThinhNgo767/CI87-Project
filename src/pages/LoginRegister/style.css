@@ -128,9 +128,11 @@ input#show-pass {
   border: none;
   outline: none;
 }
-.acceps-regulation a {
-  
+.acceps-regulation a { 
   color: #54ab35;
+}
+.acceps-regulation p{
+  margin: 0;
 }
 #register-fistname,
 #register-lastname {

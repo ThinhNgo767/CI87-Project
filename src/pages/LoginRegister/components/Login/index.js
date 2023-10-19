@@ -1,7 +1,6 @@
-import { alertSuccess } from "../../../../utils/alert";
+import { useInput } from "../../../../hooks/useInput";
 
 import { Link, useNavigate } from "react-router-dom";
-import { useInput } from "../../../../hooks/useInput";
 import { useState } from "react";
 
 const Login = ({ handleLogin }) => {
@@ -16,23 +15,16 @@ const Login = ({ handleLogin }) => {
   };
 
   const handleLoginPage = () => {
-   const login = handleLogin(email.value, password.value);
-   if(login){
-    alertSuccess("Đăng nhập thành công");
+    handleLogin(email.value, password.value);
     email.setValue("");
     password.setValue("");
     navigate("/");
-   }
-    
   };
 
   return (
     <div className="container-login">
       <h2 className="login-title">đăng nhập</h2>
-      <form
-        className="login"
-        onSubmit={handleLoginPage}
-      >
+      <form className="login" onSubmit={handleLoginPage}>
         <label htmlFor="login-email">
           Email (*)
           <input

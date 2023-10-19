@@ -105,21 +105,19 @@ const Dashboard = ({
                 <div className="box-dashboard">
                   <div className="title-dashboard">
                     <h1>danh sách tài khoản trên hệ thống</h1>{" "}
-                    <button onClick={() => setOpenAddUser(!openAddUser)}>
+                    <button type="button" className="button-adduser" onClick={() => setOpenAddUser(!openAddUser)}>
                       Add new user
                     </button>
                   </div>
-                  <form>
+                  <form className="table-list">
                     <table>
                       <thead>
                         <tr>
                           <th>id</th>
                           <th>họ</th>
                           <th>tên</th>
-
                           <th>email</th>
                           <th>ngày đăng ký</th>
-                          <th>password</th>
                           <th>ranks</th>
                           <th>status</th>
                           <th>edit</th>

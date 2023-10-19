@@ -85,7 +85,19 @@
 }
 .list-movie .slick-prev,
 .list-movie .slick-next {
-  visibility: hidden;
+  top: 24rem;
+}
+
+.list-movie .slick-prev::before,
+.list-movie .slick-next::before {
+  font-size: 2.2rem;
+}
+.list-movie button.slick-prev {
+  left: 0;
+}
+.list-movie button.slick-next {
+  right: 0;
+  padding-right: 2rem;
 }
 
 button.btn-antd {
@@ -99,7 +111,7 @@ button.btn-antd {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 1.2rem;
   line-height: 45px;
   font-weight: 700;
   transition: 0.4s ease all;
@@ -113,13 +125,13 @@ button.btn-antd {
 
 .btn-antd svg {
   margin-right: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 @media only screen and (max-width: 576px) {
   li.presaleticket {
     display: none;
   }
-  .nav--titles h3{
+  .nav--titles h3 {
     font-size: 1.2rem;
     margin: 0;
   }

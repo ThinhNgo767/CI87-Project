@@ -102,6 +102,11 @@ const InfomationTop = ({ user, isLogin }) => {
           <h3>
             Ngày đăng kí :<span>{date}</span>
           </h3>
+          <div className="meta">
+            <p className="bonus">Điểm thưởng: <strong>100</strong></p>
+            <p className="cost">Tổng chi tiêu: <strong>100000</strong><sup>đ</sup></p>
+            
+          </div>
         </div>
       </div>
     </>
