@@ -1,12 +1,14 @@
 .cart {
   min-height: 100%;
   padding-top: 5rem;
+  
 }
 .cart table {
   border: 2px solid #d4dd29;
   border-collapse: collapse;
   min-width: 80%;
   margin: 0 auto;
+  
 }
 .cart td,
 .cart th {
@@ -15,7 +17,8 @@
   border: 2px solid #d4dd29;
   text-align: center;
   vertical-align: middle;
-  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+  padding: 0.25rem 0.5rem ;
+  white-space: nowrap;
 }
 
 .cart img {
@@ -50,6 +53,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding-top: 2rem;
   max-width: 80%;
   margin: 0 auto;
@@ -83,4 +87,20 @@ button.complete-order {
   color: #fff;
   background-color: #54ab35;
   border: none;
+}
+.list-movie-cart{
+    overflow-x: auto;
+}
+@media only screen and (max-width: 576px){
+    .list-movie-cart{
+        padding: 0 0.5rem;
+    }
+    .total-cart{
+        padding-bottom: 5rem;
+        max-width: 90%;
+    }
+    .total-cart h1{
+        font-size: 1.5rem;
+    line-height: 2.2rem;
+    }
 }

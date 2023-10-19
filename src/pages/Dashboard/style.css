@@ -26,14 +26,15 @@
   background-color: transparent;
 }
 .dashboard input {
-  color: #F25D3C;
+  color: #f25d3c;
   border: none;
   outline: none;
   background-color: transparent;
   font-size: 1rem;
 }
-.dashboard span[class^="name"],.dashboard span[class^="ranks"]{
-    text-transform: capitalize;
+.dashboard span[class^="name"],
+.dashboard span[class^="ranks"] {
+  text-transform: capitalize;
 }
 
 .edit-member,
@@ -58,7 +59,7 @@ td.button {
 }
 .dashboard select {
   background-color: #131c23;
-  color: #F25D3C;
+  color: #f25d3c;
   border: none;
   min-width: fit-content;
   min-height: fit-content;
@@ -91,12 +92,12 @@ td.button {
   align-items: center;
   gap: 2rem;
 }
-.title-dashboard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+.title-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 .title-dashboard button {
   color: #fff;
@@ -111,27 +112,27 @@ td.button {
   color: #54ab35;
   background-color: #fff;
 }
-.cancel-update{
-    margin-right: .25rem;
+.cancel-update {
+  margin-right: 0.25rem;
 }
-td.button-delete{
-    text-align: center;
+td.button-delete {
+  text-align: center;
 }
-.table-list{
-  overflow-x:auto;
+.table-list {
+  overflow-x: auto;
 }
-@media only screen and (max-width: 576px){
-  .table-list{
+@media only screen and (max-width: 576px) {
+  .table-list {
     padding-bottom: 5rem;
   }
-  .title-dashboard{
+  .title-dashboard {
     justify-content: flex-start;
     margin-bottom: 2rem;
   }
-  .dashboard h1{
+  .dashboard h1 {
     font-size: 1.4rem;
   }
-  .button-adduser{
+  .button-adduser {
     margin-left: 1rem;
   }
 }

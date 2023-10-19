@@ -32,6 +32,9 @@
   .account {
     padding: 0;
   }
+  .account .navigate{
+    gap: 0.5rem;
+  }
   .account .navigate a {
     font-size: 1.2rem;
   }
