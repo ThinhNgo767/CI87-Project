@@ -106,6 +106,9 @@ const Movie = ({ movies, isLogin, setCart ,openFromLogin}) => {
               <p className="text-content--right">
                 Ngôn ngữ <span>Phim có phụ đề</span>
               </p>
+              <p className="text-content--right">
+                Giá vé <span>{(movie.price).toLocaleString()}đ</span>
+              </p>
               {isLogin ? (
                 <>
                   <div className="submit-order-ticket">

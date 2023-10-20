@@ -3,6 +3,7 @@ import { fetchUser } from "./api/users";
 import { fetchMovies } from "./api/movies";
 import { updateUser } from "./api/users";
 import { useAuth } from "./hooks/useAuth";
+import CartProvider from "./components/CartProvider";
 import { alertError, alertWanning, alertSuccess } from "./utils/alert";
 import THEATERS from "./data/Theater";
 import Header from "./components/Header";
@@ -71,6 +72,7 @@ const App = () => {
     fetchDataMoviesFromAPI();
   }, []);
 
+
   const handleLogin = async (email, password) => {
     const userLogin = users.find(
       (user) => email === user.email && password === user.password
@@ -120,6 +122,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <CartProvider>
       <Header
         users={users}
         isLogin={isLogin}
@@ -209,6 +212,7 @@ const App = () => {
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
+      </CartProvider>
     </div>
   );
 };

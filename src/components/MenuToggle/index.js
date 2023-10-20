@@ -53,7 +53,7 @@ const MenuToggle = ({user ,isLogin}) => {
             ref={menuRef}
             onClick={() => setOpenMenu(!openMenu)}
           >
-            {isLogin && showDashboard && <li>
+            {(isLogin && showDashboard) && <li>
               <Link to="/admin">dashboard</Link>
             </li>}
             
